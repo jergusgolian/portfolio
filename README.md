@@ -1,4 +1,4 @@
-<img width="1280" height="400" alt="landing image" src="https://github.com/user-attachments/assets/cc6a4287-4e44-482d-baa1-f41ba95e596f" />
+<img src="graphics/landing image.png">
 
 # Portfolio
 This is all the code for my website with my portfolio.
@@ -21,4 +21,4 @@ I created, or started working on this project in the start of the 2025/2026 scho
 - [ ] Create contact page
 
 # Screenshots
-<img width="2515" height="1265" alt="Screenshot 2025-11-29 114724" src="https://github.com/user-attachments/assets/0ba95e5e-07c8-4dd5-9752-23b6028e33dc" />
+<img src="graphics/screenshot 1.png">
