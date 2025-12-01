@@ -3,7 +3,7 @@
 This is all the code for my website with my portfolio.
 Feel free to check out the code and take inspiration.
 
-> [!IMPORTANT]
+> [!CAUTION]
 > This is hobby project, so it might happen, that i will forget about it. Mayby it's already forgotten.
 
 # Backstory
