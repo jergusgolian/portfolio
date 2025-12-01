@@ -1,5 +1,6 @@
-# Portfolio
+<img width="1280" height="400" alt="landing image" src="https://github.com/user-attachments/assets/cc6a4287-4e44-482d-baa1-f41ba95e596f" />
 
+# Portfolio
 This is all the code for my website with my portfolio.
 Feel free to check out the code and take inspiration.
 
