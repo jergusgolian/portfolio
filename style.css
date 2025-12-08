@@ -41,6 +41,8 @@ html {
 }
 body {
     background-color: whitesmoke;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 .main {
     max-width: 45cm;
@@ -550,13 +552,20 @@ video {
     nav.menu-open .bar:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -6px);
     }
+    html {
+        cursor: default; /* Reset global cursor */
+    }
     a {
+        cursor: pointer; /* Restore pointer for links */
         font-size: clamp(1rem, 2vw, 2rem);
     }
     .web-button {
         width: 80%;
         font-size: clamp(1rem, 2vw, 2rem);
         padding: 10px 0;
+    }
+    .circle, .small-circle { /* HIDE CUSTOM CURSOR ON TABLET/MOBILE */
+        display: none;
     }
 }
 
@@ -596,6 +605,28 @@ video {
         width: 100%;
     }
     video {
-        width: 200%;
+        height: 120vw;
+        object-fit: cover;
+    }
+    .circle, .small-circle {
+        display: none;
+    }
+}
+@media (prefers-color-scheme: dark) {
+    @media (max-width: 1023px) {
+        html {
+            cursor: default;
+        }
+        a {
+            cursor: pointer;
+        }
+        .circle, .small-circle {
+            display: none;
+        }
+    }
+    @media (max-width: 767px) {
+        .circle, .small-circle {
+            display: none;
+        }
     }
 }
