@@ -565,9 +565,19 @@ video {
         font-size: clamp(1rem, 4vw, 2rem);
     }
     .web-button {
-        width: 80%;
+        width: 90%;
         font-size: clamp(1rem, 4vw, 2rem);
         padding: 3vw 0;
+        margin-top: -7vw;
+    }
+    .web-button:hover {
+        background-position: 0 0;
+        color: rgb(14, 14, 14);
+        box-shadow: 0 0.6vh black;
+    }
+    .web-button:active {
+        box-shadow: 0 0vh black;
+        transform: translateY(0.6vh);
     }
     .circle, .small-circle {
         display: none;
@@ -590,11 +600,14 @@ video {
         border-radius: 6vw;
         margin-top: 1px;
     }
+    h1 {
+        font-size: clamp(1.5rem, 4vw, 3rem);
+    }
     h2 {
-        font-size: clamp(3rem, 8vw, 6rem);
+        font-size: clamp(2rem, 8vw, 6rem);
     }
     h3 {
-        font-size: clamp(2rem, 6vw, 4rem);
+        font-size: clamp(1.75rem, 6vw, 4rem);
     }
     p {
         width: 100%;
@@ -616,13 +629,11 @@ video {
         .hamburger-toggle .bar {
             background-color: whitesmoke;
         }
-    }
-    @media (max-width: 767px) {
-        .circle, .small-circle {
-            display: none;
+        .web-button:hover {
+            box-shadow: 0 0.6vh gray;
         }
-        .hamburger-toggle .bar {
-            background-color: whitesmoke;
+        .web-button:active {
+            box-shadow: 0 0vh gray;
         }
     }
 }
