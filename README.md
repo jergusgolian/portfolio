@@ -16,7 +16,7 @@ I created, or started working on this project in the start of the 2025/2026 scho
 # To-do
 - [x] Create landing page
 - [x] Design
-- [ ] Mobile version
+- [x] Mobile version
 - [ ] Make more projects
 - [ ] Create contact page
 
