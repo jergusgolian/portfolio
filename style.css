@@ -506,6 +506,7 @@ video {
         flex-direction: column;
         align-items: flex-start;
         border-radius: 3vw;
+        align-content: center;
     }
     .hamburger-toggle {
         display: flex;
@@ -519,7 +520,10 @@ video {
         padding: 0;
         position: absolute;
         right: 30px;
-        top: 19px;
+        top: 50%;
+        transform: translateY(-100%);
+        width: clamp(1rem, 4vw, 3rem);
+        height: clamp(1rem, 4vw, 3rem);
     }
     video {
         height: 100vw;
@@ -527,9 +531,9 @@ video {
     }
     .hamburger-toggle .bar {
         width: 100%;
-        height: 3px;
+        height: 0.5vw;
         background-color: whitesmoke;
-        border-radius: 1px;
+        border-radius: 20vw;
         transition: transform 0.3s, opacity 0.3s;
     }
     nav ul {
@@ -601,7 +605,10 @@ video {
         margin-top: 1px;
     }
     h1 {
-        font-size: clamp(1.5rem, 4vw, 3rem);
+        font-size: clamp(1rem, 4vw, 3rem);
+    }
+    .logo {
+        width: clamp(2rem, 8vw, 6rem);
     }
     h2 {
         font-size: clamp(2rem, 8vw, 6rem);
