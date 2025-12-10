@@ -501,27 +501,25 @@ video {
 @media (max-width: 1023px) {
     nav {
         padding: 0px 25px;
-        width: calc(100%-60px);
+        width: 70vw;
         margin: 10px 0;
         flex-direction: column;
         align-items: flex-start;
-        border-radius: 3vw;
-        align-content: center;
+        border-radius: 20px;
     }
     .hamburger-toggle {
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
-        width: 30px;
-        height: 25px;
+        justify-content: space-between;
+        width: 50px;
+        height: 100px;
         background: none;
         border: none;
         cursor: pointer;
         padding: 0;
         position: absolute;
-        right: 30px;
-        top: 50%;
-        transform: translateY(-100%);
+        right: 50px;
+        top: 30px;
         width: clamp(1rem, 4vw, 3rem);
         height: clamp(1rem, 4vw, 3rem);
     }
@@ -530,11 +528,12 @@ video {
         object-fit: cover;
     }
     .hamburger-toggle .bar {
-        width: 100%;
-        height: 0.5vw;
+        width: 150%;
+        height: 0.8vw;
         background-color: whitesmoke;
         border-radius: 20vw;
         transition: transform 0.3s, opacity 0.3s;
+        background-color: rgb(14, 14, 14);
     }
     nav ul {
         flex-direction: column;
@@ -586,9 +585,6 @@ video {
     .circle, .small-circle {
         display: none;
     }
-    .hamburger-toggle .bar {
-        background-color: rgb(14, 14, 14);
-    }
     .text-image:not(.info), .main > div:nth-of-type(2n+3) .text-image:not(.info)  {
         background-color: #151515;
         padding: 5vw;
@@ -605,10 +601,12 @@ video {
         margin-top: 1px;
     }
     h1 {
-        font-size: clamp(1rem, 4vw, 3rem);
+        display:none
     }
     .logo {
-        width: clamp(2rem, 8vw, 6rem);
+        padding: 0;
+        margin: 10px 0;
+        width: clamp(2rem, 16vw, 6rem);
     }
     h2 {
         font-size: clamp(2rem, 8vw, 6rem);
