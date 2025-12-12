@@ -1,7 +1,10 @@
 ---
+title_project: Táto web-stránka
+category: coding
+category_url: /programovanie.html
+best_pick: true
 id: coding
 title_section: Programovanie
-title_project: Táto web-stránka
 image: img/coding.png
 link_section: "#coding"
 order: 3
