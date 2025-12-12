@@ -9,9 +9,10 @@ title: Home
 <div class="text-image">
         <div class="text info">
             </div>
-        <img src="{{ '/img/ja.jpg' | relative_url }}" alt="Jergus Golian">
+        <img src="{{ '/img/ja.png' | relative_url }}" alt="Jergus Golian">
     </div>
 {% assign sorted_projects = site.projects | sort: "order" %}
 {% for project in sorted_projects %}
   {% include project_card.html project=project %}
 {% endfor %}
+
