@@ -1,4 +1,8 @@
 ---
+title_project: Kr
+category: videomaing
+category_url: /videotvorba.html
+best_pick: true
 id: videomaking
 title_section: Videotvorba
 title_project: Lock-In
