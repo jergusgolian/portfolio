@@ -5,7 +5,7 @@ category_url:
 best_pick: true
 id: info
 title_section: O mne
-image: img/lock-in.png
+image: img/ja.png
 link_section: "#info"
 order: 0
 ---
