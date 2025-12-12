@@ -1,46 +1,17 @@
 ---
-layout: default
+layout: default  # This must be present
 title: Home
 ---
 <div id="landing">
     <div class="landing-image"></div>
-    <video autoplay muted playsinline preload="auto"><source src="img/logo animation.mp4"></video>
+    <video autoplay muted playsinline preload="auto"><source src="{{ '/img/logo animation.mp4' | relative_url }}"></video>
 </div>
-<div id="info">
-    <div style="height: 120px;"></div>
-    <h2>O mne</h2>
-    <div class="text-image">
+<div class="text-image">
         <div class="text info">
-            <p>
-                Som študentom SPŠE Zochova, ktorého baví spájať kreativitu s technológiami. 
-                Už od prvého kontaktu s dizajnom, videotvorbou a programovaním ma fascinovalo, 
-                ako sa dá pomocou nápadu a pár riadkov kódu vytvoriť niečo, čo zanechá dojem.
-                <br><br>
-                Najviac ma napĺňa možnosť premeniť myšlienku na reálny projekt -
-                či už ide o vizuálny návrh, video alebo web.
-                Každý nový nápad beriem ako príležitosť posunúť svoje schopnosti ďalej a naučiť sa niečo nové.
-                <br><br>
-                Na tejto stránke zverejňujem všetky svoje dokončené projekty. 
-                Beriem ju ako priestor, kde môžem ukázať svoju cestu,
-                napredovanie a to, čo ma na tvorbe najviac baví - slobodu tvoriť.
-
-            </p>
-        </div>
-        <img src="img/ja.jpg" alt="Jergus Golian">
+            </div>
+        <img src="{{ '/img/ja.jpg' | relative_url }}" alt="Jergus Golian">
     </div>
-    <div class="quote">
-        <hr>
-        <p>
-            Ak ťa inšpiruje niečo veľké, nejaký mimoriadny cieľ, všetky tvoje lienky prekročia vlastný tieň,
-            tvoja myseľ presiahne svoje obmedze tvoje vedomie sa rozvinie do všetkých strán a ty sa ocitneš v novom zelnom svete.
-            Skryté sily, vlohy a nadania ožijú a ty objavíš svoje nov ktoré je omnoho väčšie, než si o tom kedy sníval.
-        </p>
-        <hr>
-    </div>
-</div>
-
 {% assign sorted_projects = site.projects | sort: "order" %}
-
 {% for project in sorted_projects %}
   {% include project_card.html project=project %}
 {% endfor %}
