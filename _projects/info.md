@@ -1,8 +1,11 @@
 ---
+title_project:
+category: info
+category_url: 
+best_pick: true
 id: info
 title_section: O mne
-title_project: 
-image: img/ja.png
+image: img/lock-in.png
 link_section: "#info"
 order: 0
 ---
