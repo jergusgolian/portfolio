@@ -2,7 +2,7 @@
 id: design
 title_section: Design
 title_project: Moje Logo
-image: img/moje-logo.jpg
+image: img/moje-logo.png
 link_section: "#design"
 order: 1
 ---
