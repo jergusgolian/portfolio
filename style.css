@@ -192,7 +192,7 @@ hr {
     mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
     background-color: black;
     height: 150vh;
-    width: 100%; /* FIXED: Set to 100% */
+    width: 200%; /* FIXED: Set to 100% */
     filter: invert();
 }
 video {
@@ -649,3 +649,4 @@ video {
         }
     }
 }
+
