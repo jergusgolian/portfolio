@@ -1,1 +1,8 @@
-yaml collections: projects: output: true
+title: Jerguš Golian
+description: Personal portfolio powered by Jekyll and GitHub Pages
+encoding: utf-8
+lang: en
+
+collections:
+  projects:
+    output: false
