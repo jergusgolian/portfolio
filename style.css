@@ -34,9 +34,12 @@ body {
 ─██░░██─────────██░░░░░░░░░░██─██░░██──██░░░░░░██────██░░░░░░░░░░██─██░░░░░░░░░░██─██░░██──────────██░░██─██░░██─────────██░░░░░░░░░░██─────██░░██─────██░░░░░░░░░░██─██░░██──██░░░░░░██─██░░░░░░░░░░██─
 ─██████─────────██████████████─██████──██████████────██████████████─██████████████─██████──────────██████─██████─────────██████████████─────██████─────██████████████─██████──██████████─██████████████─
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── */
+
 html {
     scroll-behavior: smooth;
     cursor: none;
+    width: 100%; /* ADDED: Ensures root element respects bounds */
+    overflow-x: hidden; /* ADDED: Hides any unintentional horizontal scrollbar */
 }
 body {
     background-color: whitesmoke;
@@ -185,11 +188,11 @@ hr {
     transform: translateY(0.6vh);
 }
 .landing-image {
-    margin-left: -1%;
+    margin-left: 0; /* FIXED: Removed -1% margin */
     mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
     background-color: black;
     height: 150vh;
-    width: 101%;
+    width: 100%; /* FIXED: Set to 100% */
     filter: invert();
 }
 video {
@@ -201,7 +204,7 @@ video {
     transform: translate(-50%, -50%);
     mask-image: linear-gradient(to bottom, black 65%, transparent 66%);
     max-width: 30cm;
-    width: 101%;
+    width: 100%; /* FIXED: Set to 100% (was 101%) */
     filter: invert();
 }
 .hamburger-toggle {
@@ -375,12 +378,14 @@ video {
     }
     .quote, .quote p {
         text-align: center;
-        width: 80%;
+        width: 85%;
         margin: auto;
+        font-style: italic;
     }
     hr {
-        margin: 100px 50px;
+        margin: 100px auto;
         opacity: 25%;
+        width: 50%;
     }
     .web-button {
         background: var(--button-gradient-dark);
@@ -411,11 +416,11 @@ video {
         transform: translateY(0.6vh);
     }
     .landing-image {
-        margin-left: -1%;
+        margin-left: 0; /* FIXED: Removed -1% margin */
         mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
         background-color: black;
         height: 150vh;
-        width: 101%;
+        width: 100%; /* FIXED: Set to 100% */
         filter: invert(0);
     }
     video {
@@ -643,6 +648,4 @@ video {
             box-shadow: 0 0vh gray;
         }
     }
-
 }
-
