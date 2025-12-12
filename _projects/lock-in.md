@@ -1,13 +1,11 @@
 ---
 title_project: Lock-In
-category: videomaing
+title_section: Videotvorba
+category: videomaking
 category_url: /videotvorba.html
 best_pick: true
 id: videomaking
-title_section: Videotvorba
-title_project: Lock-In
 image: img/lock-in.png
-link_section: "#videomaking"
 order: 2
 ---
 Krátky film, ktorý zdanlivo rozpráva o obyčajnom upratovaní izby - no v skutočnosti ukazuje niečo oveľa hlbšie. Téma odpútania sa od mobilu symbolizuje snahu získať späť kontrolu nad vlastným časom, priestorom a mysľou.
