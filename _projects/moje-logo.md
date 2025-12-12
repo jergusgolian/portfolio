@@ -7,7 +7,7 @@ id: design
 title_section: Design
 image: img/moje-logo.png
 link_section: "#design"
-order: 0
+order: 1
 ---
 Toto logo vzniklo ako jednoduchý, no výrazný symbol mojej tvorby. Písmeno "G" v sebe spája čistotu tvarov a rovnováhu medzi estetikou a funkčnosťou - presne to, čo sa snažím prinášať aj do svojich projektov.
 
