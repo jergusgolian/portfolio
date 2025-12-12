@@ -1,0 +1,14 @@
+<div id="{{ include.project.id }}" class="project-section">
+    <div style="height: 120px;"></div>
+    <h2>{{ include.project.title_section }}</h2>
+    <div class="text-image">
+        <div class="text">
+            <h3>{{ include.project.title_project }}</h3>
+            <p>
+                {{ include.project.content | markdownify }}
+            </p>
+        </div>
+        <img src="{{ include.project.image }}" alt="{{ include.project.title_project }}">
+    </div>
+    <a href="{{ include.project.link_section }}" class="web-button">Ďalšie</a>
+</div>
