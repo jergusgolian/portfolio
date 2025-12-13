@@ -1,13 +1,8 @@
 ---
 title_project: Moje logo
-category: info
-category_url: /design.html
-best_pick: true
-id: design
-title_section: Design
+category: design
 image: img/moje-logo.png
-link_section: "#design"
-order: 1
+date: 2024-11-15 09:30:00 +0100
 ---
 Toto logo vzniklo ako jednoduchý, no výrazný symbol mojej tvorby. Písmeno "G" v sebe spája čistotu tvarov a rovnováhu medzi estetikou a funkčnosťou - presne to, čo sa snažím prinášať aj do svojich projektov.
 
