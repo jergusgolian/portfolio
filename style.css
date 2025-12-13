@@ -176,15 +176,19 @@ hr {
     box-shadow: 0 0vh var(--dark-variant);
     transform: translateY(0.6vh);
 }
-.landing-image {
+.landing-gradient {
     margin-left: -1%;
     height: 150vh;
     width: 101%;
     filter: invert();
-}
-.landing-image:not(.nd) {
     background-color: black;
     mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
+.landing-div {
+    margin-left: -1%;
+    height: 150vh;
+    width: 101%;
+    filter: invert()
 }
 video {
     width: 75%;
@@ -396,7 +400,7 @@ video {
         box-shadow: 0 0vh var(--dark-variant);
         transform: translateY(0.6vh);
     }
-    .landing-image {
+    .landing-gradient {
         filter: invert(0);
     }
     video {
