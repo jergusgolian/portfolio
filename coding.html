@@ -12,7 +12,7 @@ title: Coding
     
     {% assign real_projects = site.projects | where: "category", "coding" | sort: "date" | reverse %}
     
-    {% if design_projects.size > 0 %}
+    {% if real_projects.size > 0 %}
         {% for project in real_projects %}
             
             <div class="text-image">
