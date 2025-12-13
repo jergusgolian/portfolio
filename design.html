@@ -1,44 +1,26 @@
-{% comment %} 
-1. Access the 'projects' collection (site.projects)
-2. Filter the collection to only keep items where 'category' is 'design'
-3. Sort the resulting list by the 'date' field
-4. Reverse the order so the newest projects show up at the top
-{% endcomment %}
 ---
 layout: default
-title: Design
 ---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    </head>
+<body>
+    <div id="design">
+        <div style="height: 120px;"></div>
+        <h2>Design</h2>
 
+        {% assign design_projects = site.projects | where: "category", "design" | sort: "date" | reverse %}
 
-{% assign design_projects = site.projects | where: "category", "design" | sort: "date" | reverse %}
+        Design Projects ({{ design_projects | size }} total)
 
-
-
-{% comment %} 
-Display a heading for the section.
-{% endcomment %}
-
-
-<h2>Design Projects ({{ design_projects | size }} total)</h2>
-
-{% if design_projects.size > 0 %}
-    <div class="projects-grid">
-    {% for project in design_projects %}
-        <div class="project-card">
-            <a href="{{ project.url | relative_url }}">
+        {% if design_projects.size > 0 %}
+            {% for project in design_projects %}
                 <h3>{{ project.title }}</h3>
-            </a>
-            <p class="project-meta">
-                Kategória: **{{ project.category | capitalize }}** | Dátum: {{ project.date | date: "%Y-%m-%d" }}
-            </p>
-            <p>{{ project.excerpt | default: project.content | strip_html | truncatewords: 30 }}</p>
-            
-            <a href="{{ project.url | relative_url }}" class="read-more-link">
-                Čítať viac &rarr;
-            </a>
+                {% endfor %}
+        {% else %}
+            <p>Momentálne nie sú k dispozícii žiadne projekty s kategóriou "design".</p>
+        {% endif %}
         </div>
-    {% endfor %}
-    </div>
-{% else %}
-    <p>Momentálne nie sú k dispozícii žiadne projekty s kategóriou "design".</p>
-{% endif %}
+    </body>
+</html>
