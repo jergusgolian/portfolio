@@ -14,21 +14,21 @@ const standalonePageMapping = {
     'coding.html': 'nav ul li a[href*="#coding"]'
 };
 
-const currentPagePath = window.location.pathname;
-// Check if the current page is one of the standalone pages
-const isStandalonePage = Object.keys(standalonePageMapping).some(filename => 
-    currentPagePath.endsWith(filename)
-);
+// 🚀 MODIFIED CHECK: Use the full URL (href) to robustly check the filename
+const currentPageURL = window.location.href; 
+let isStandalonePage = false;
 let activeStandaloneLink = null;
-if (isStandalonePage) {
-    for (const [filename, selector] of Object.entries(standalonePageMapping)) {
-        if (currentPagePath.endsWith(filename)) {
-            activeStandaloneLink = document.querySelector(selector);
-            break;
-        }
+
+for (const [filename, selector] of Object.entries(standalonePageMapping)) {
+    // Check if the URL contains the filename at the end of the path
+    // Using includes('/' + filename) makes it resilient to local file paths
+    if (currentPageURL.includes('/' + filename)) {
+        isStandalonePage = true;
+        activeStandaloneLink = document.querySelector(selector);
+        break;
     }
 }
-// --- END NEW DEFINITIONS ---
+// --- END MODIFIED DEFINITIONS ---
 
 // Function to update the indicator's position (No changes here)
 function updateIndicatorPosition(activeElement) {
@@ -64,7 +64,11 @@ if (isStandalonePage && activeStandaloneLink) {
     // Find the parent li element to activate
     const liToActivate = activeStandaloneLink.parentNode;
     if (liToActivate) {
-        liToActivate.classList.add('active'); // Activate the parent li
+        // First remove all active classes to be safe
+        navLinks.forEach(i => i.classList.remove('active'));
+        homeLink.classList.remove('active');
+        
+        liToActivate.classList.add('active'); // Activate the correct li
         window.onload = function() {
             updateIndicatorPosition(liToActivate);
         };
