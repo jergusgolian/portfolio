@@ -10,10 +10,10 @@ title: Videomaking
 <body>
     <div class="landing-div"><img src="img/videomaking.png" class="nd landing-img"></div>
     
-    {% assign projects = site.projects | where: "category", "videomaking" | sort: "date" | reverse %}
+    {% assign real_projects = site.projects | where: "category", "videomaking" | sort: "date" | reverse %}
     
-    {% if design_projects.size > 0 %}
-        {% for project in projects %}
+    {% if real_projects.size > 0 %}
+        {% for real_project in projects %}
             
             <div class="text-image">
                 <div class="text">
