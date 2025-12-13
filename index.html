@@ -1,14 +1,136 @@
----
-layout: default  # This must be present
-title: Home
----
-<div id="landing">
-    <div class="landing-image"></div>
-    <video autoplay muted playsinline preload="auto"><source src="{{ '/img/logo animation.mp4' | relative_url }}"></video>
-</div>
-{% assign sorted_projects = site.projects | sort: "order" %}
-{% for project in sorted_projects %}
-  {% include project_card.html project=project %}
-{% endfor %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jerguš Golian</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/logo.png">
+</head>
+<body>
+    <div class="circle"></div>
+    <div class="small-circle"></div>
+    <nav>
+        <a href="#landing" style="display: flex; align-items: center;">
+            <img src="img/logo.png" alt="logo" width="50" class="nd logo">
+            <h1>Jerguš Golian</h1>
+        </a>
+        <button class="hamburger-toggle" aria-expanded="false" aria-controls="main-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <ul>
+            <li class><a href="#info">O mne</a></li>
+            <li class><a href="#design">Design</a></li>
+            <li class><a href="#videomaking">Videotvorba</a></li>
+            <li class><a href="#coding">Programovanie</a></li>
+        </ul>
+        <div class="indicator"></div>
+    </nav>
+    <div id="landing">
+        <div class="landing-image"></div>
+        <video autoplay muted playsinline preload="auto"><source src="img/logo animation.mp4"></video>
+    </div>
+    <div class="main">
+        <div id="info">
+            <div style="height: 120px;"></div>
+            <h2>O mne</h2>
+            <div class="text-image">
+                <div class="text info">
+                    <p>
+                        Som študentom SPŠE Zochova, ktorého baví spájať kreativitu s technológiami. 
+                        Už od prvého kontaktu s dizajnom, videotvorbou a programovaním ma fascinovalo, 
+                        ako sa dá pomocou nápadu a pár riadkov kódu vytvoriť niečo, čo zanechá dojem.
+                        <br><br>
+                        Najviac ma napĺňa možnosť premeniť myšlienku na reálny projekt -
+                        či už ide o vizuálny návrh, video alebo web.
+                        Každý nový nápad beriem ako príležitosť posunúť svoje schopnosti ďalej a naučiť sa niečo nové.
+                        <br><br>
+                        Na tejto stránke zverejňujem všetky svoje dokončené projekty. 
+                        Beriem ju ako priestor, kde môžem ukázať svoju cestu,
+                        napredovanie a to, čo ma na tvorbe najviac baví - slobodu tvoriť.
 
+                    </p>
+                </div>
+                <img src="img/ja.jpg" alt="Jergus Golian">
+            </div>
+            <div class="quote">
+                <hr>
+                <p>
+                    Ak ťa inšpiruje niečo veľké, nejaký mimoriadny cieľ, všetky tvoje lienky prekročia vlastný tieň,
+                    tvoja myseľ presiahne svoje obmedze tvoje vedomie sa rozvinie do všetkých strán a ty sa ocitneš v novom zelnom svete.
+                    Skryté sily, vlohy a nadania ožijú a ty objavíš svoje nov ktoré je omnoho väčšie, než si o tom kedy sníval.
+                </p>
+                <hr>
+            </div>
+        </div>
+        <div id="design">
+            <div style="height: 120px;"></div>
+            <h2>Design</h2>
+            <div class="text-image">
+                <div class="text">
+                    <h3>Moje Logo</h3>
+                    <p>
+                        Toto logo vzniklo ako jednoduchý, no výrazný symbol mojej tvorby.
+                        Písmeno "G" v sebe spája čistotu tvarov a rovnováhu medzi estetikou
+                        a funkčnosťou - presne to, čo sa snažím prinášať aj do svojich projektov.
+                        <br><br>
+                        Minimalistický dizajn vychádza z myšlienky, že aj malý prvok môže niesť silný význam.
+                        Logo reprezentuje moju identitu - spojenie kreativity, precíznosti a osobného prístupu k tvorbe.
+                        <br><br>
+                        Je to prvý krok k budovaniu identity, ktorá odráža to, kým som, a kam chcem v tvorbe smerovať.
+                    </p>
+                </div>
+                <img src="img/moje-logo.jpg" alt="My Logo">
+            </div>
+            <a href="#design" class="web-button">Ďalšie</a>
+        </div>
+        <div id="videomaking">
+            <div style="height: 120px;"></div>
+            <h2>Videotvorba</h2>
+            <div class="text-image">
+                <div class="text">
+                    <h3>Lock-In</h3>
+                    <p>
+                        Krátky film, ktorý zdanlivo rozpráva o obyčajnom upratovaní izby - no v skutočnosti ukazuje niečo oveľa hlbšie.
+                        Téma odpútania sa od mobilu symbolizuje snahu získať späť kontrolu nad vlastným časom, priestorom a mysľou.
+                        <br><br>
+                        Film vznikol ako osobný experiment s cieľom zachytiť, ako často sa necháme „uzamknúť“ vo virtuálnom svete, a čo sa stane, keď sa od neho na chvíľu odpojíme.
+                        <br><br>
+                        Jednoduchá vizuálna forma a pokojné tempo filmu vytvárajú priestor pre diváka, aby sa zamyslel nad vlastnými návykmi a našiel v príbehu kúsok seba.
+                        Lock-In nie je len o upratanej izbe - je o uprataní v hlave.
+                    </p>
+                </div>
+                <img src="img/lock-in.png" alt="Short-film">
+            </div>
+            <a href="#videomaking" class="web-button">Ďalšie</a>
+        </div>
+        <div id="coding">
+            <div style="height: 120px;"></div>
+            <h2>Programovanie</h2>
+            <div class="text-image">
+                <div class="text">
+                    <h3>Táto web-stránka</h3>
+                    <p>
+                        Táto stránka vznikla ako môj osobný projekt - spojenie všetkého, čo ma baví: dizajnu, videotvorby a programovania.
+                        Chcel som vytvoriť priestor, ktorý nebude len ukážkou mojej práce, ale aj niečím, čo sám používam, rozvíjam a neustále vylepšujem.
+                        <br><br>
+                        Stránka je postavená od základov vlastným kódom.
+                        Od prvého návrhu až po finálne animácie a rozloženie som sa snažil o čistý, prehľadný a funkčný dizajn, ktorý odráža môj štýl - jednoduchosť, prepojenosť a dôraz na detaily.
+                        <br><br>
+                        Je to projekt, ktorý rastie spolu so mnou.
+                        Každá úprava, každá nová sekcia či funkcia predstavuje ďalší krok v mojom vývoji ako tvorcu.
+                        Pre mňa nie je len výkladnou skriňou projektov - je dôkazom toho, že učenie, tvorba a sebazdokonaľovanie nikdy nekončia.
 
+                    </p>
+                </div>
+                <img src="img/coding.png" alt="Code">
+            </div>
+            <a href="#coding" class="web-button">Ďalšie</a>
+        </div>
+        <div class="foot"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

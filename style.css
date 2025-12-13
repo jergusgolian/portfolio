@@ -38,8 +38,6 @@ body {
 html {
     scroll-behavior: smooth;
     cursor: none;
-    width: 100%; /* ADDED: Ensures root element respects bounds */
-    overflow-x: hidden; /* ADDED: Hides any unintentional horizontal scrollbar */
 }
 body {
     background-color: whitesmoke;
@@ -188,11 +186,11 @@ hr {
     transform: translateY(0.6vh);
 }
 .landing-image {
-    margin-left: 0; /* FIXED: Removed -1% margin */
+    margin-left: -1%;
     mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
     background-color: black;
     height: 150vh;
-    width: 200%; /* FIXED: Set to 100% */
+    width: 101%;
     filter: invert();
 }
 video {
@@ -204,7 +202,7 @@ video {
     transform: translate(-50%, -50%);
     mask-image: linear-gradient(to bottom, black 65%, transparent 66%);
     max-width: 30cm;
-    width: 100%; /* FIXED: Set to 100% (was 101%) */
+    width: 101%;
     filter: invert();
 }
 .hamburger-toggle {
@@ -416,11 +414,11 @@ video {
         transform: translateY(0.6vh);
     }
     .landing-image {
-        margin-left: 0; /* FIXED: Removed -1% margin */
+        margin-left: -1%;
         mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
         background-color: black;
         height: 150vh;
-        width: 100%; /* FIXED: Set to 100% */
+        width: 101%;
         filter: invert(0);
     }
     video {
@@ -649,4 +647,3 @@ video {
         }
     }
 }
-
