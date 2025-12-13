@@ -249,14 +249,14 @@ video {
     border: 2px solid var(--main-color); /* Keeps the border the same */
 }
 .tab {
-    height: 10vw;
+    height: 90%;
 }
 .landing-img {
     position: absolute;
     top: 50vh;
     left: 50vw;
     transform: translate(-50%, -50%);
-    padding: 30vw;
+    filter: invert();
 }
 
 /* ----------------------------------------------------------------------------------------------------------------------------------*/
@@ -465,6 +465,9 @@ video {
         background-color: var(--main-color); /* Fills the circle */
         border: 2px solid var(--main-color); /* Keeps the border the same */
     }
+    .landing-img {
+        filter: invert(0);
+    }
 }
 
 
@@ -629,6 +632,7 @@ video {
     }
 
 }
+
 
 
 
