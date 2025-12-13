@@ -307,10 +307,6 @@ video {
     }
     h2 {
         color: whitesmoke;
-        margin-left: 10%;
-        text-align: left;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: clamp(3rem, 3vw, 4rem);
     }
     h3 {
         color: whitesmoke;
@@ -638,6 +634,7 @@ video {
     }
 
 }
+
 
 
 
