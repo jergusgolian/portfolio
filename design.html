@@ -4,23 +4,27 @@ layout: default
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    </head>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-    <div id="design">
-        <div style="height: 120px;"></div>
+    <div id="text-image">
         <h2>Design</h2>
-
-        {% assign design_projects = site.projects | where: "category", "design" | sort: "date" | reverse %}
-
-        Design Projects ({{ design_projects | size }} total)
-
-        {% if design_projects.size > 0 %}
-            {% for project in design_projects %}
+    
+        <div class="text-image">
+            <div class="text">
                 <h3>{{ project.title }}</h3>
-                {% endfor %}
-        {% else %}
-            <p>Momentálne nie sú k dispozícii žiadne projekty s kategóriou "design".</p>
-        {% endif %}
+                <p>
+                    Toto logo vzniklo ako jednoduchý, no výrazný symbol mojej tvorby.
+                    Písmeno "G" v sebe spája čistotu tvarov a rovnováhu medzi estetikou
+                    a funkčnosťou - presne to, čo sa snažím prinášať aj do svojich projektov.
+                    <br><br>
+                    Minimalistický dizajn vychádza z myšlienky, že aj malý prvok môže niesť silný význam.
+                    Logo reprezentuje moju identitu - spojenie kreativity, precíznosti a osobného prístupu k tvorbe.
+                    <br><br>
+                    Je to prvý krok k budovaniu identity, ktorá odráža to, kým som, a kam chcem v tvorbe smerovať.
+                </p>
+            </div>
+            <img src="{{ project.image }}" alt={{ project.title }}>
         </div>
     </body>
 </html>
