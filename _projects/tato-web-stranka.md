@@ -5,7 +5,7 @@ category_url: /programovanie.html
 best_pick: true
 id: coding
 title_section: Programovanie
-image: img/coding.png
+image: img/my-setup.png
 link_section: "#coding"
 order: 3
 ---
