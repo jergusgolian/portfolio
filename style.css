@@ -186,7 +186,7 @@ hr {
 }
 .landing-div {
     margin-left: -1%;
-    height: 60vh;
+    height: 70%;
     width: 102%;
     filter: invert()
 }
@@ -635,6 +635,7 @@ video {
     }
 
 }
+
 
 
 
