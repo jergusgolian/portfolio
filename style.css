@@ -397,11 +397,6 @@ video {
         transform: translateY(0.6vh);
     }
     .landing-image {
-        margin-left: -1%;
-        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-        background-color: black;
-        height: 150vh;
-        width: 101%;
         filter: invert(0);
     }
     video {
@@ -634,6 +629,7 @@ video {
     }
 
 }
+
 
 
 
