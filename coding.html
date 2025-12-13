@@ -1,1 +1,34 @@
-
+---
+layout: default
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="tab"></div>
+    
+    <div id="design">
+        <h2>Design</h2>
+        
+        {% assign design_projects = site.projects | where: "category", "coding" | sort: "date" | reverse %}
+        
+        {% if design_projects.size > 0 %}
+            {% for project in design_projects %}
+                
+                <div class="text-image">
+                    <div class="text">
+                        <h3>{{ project.title }}</h3>
+                        {{ project.content }}
+                    </div>
+                    <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
+                </div>
+                
+            {% endfor %}
+        {% else %}
+            <p>Momentálne nie sú k dispozícii žiadne projekty s kategóriou "design".</p>
+        {% endif %}
+        </div>
+</body>
+</html>
