@@ -1,4 +1,34 @@
----
-layout: default
-title: Design
----
+{% comment %} 
+Step 1: Get all items from the 'projects' collection (replace 'projects' 
+if your collection has a different name, e.g., 'posts').
+{% endcomment %}
+{% assign all_projects = site.projects %}
+
+{% comment %} 
+Step 2: Filter the projects to only include those where the 'category' is 'design'.
+The 'where' filter is used for this selection.
+{% endcomment %}
+{% assign design_projects = all_projects | where: "category", "design" %}
+
+{% comment %} 
+Step 3: Sort the filtered projects by the 'date' field. The 'reverse' 
+filter is added to show the newest projects first (descending order).
+Remove 'reverse' if you want the oldest first.
+{% endcomment %}
+{% assign sorted_projects = design_projects | sort: "date" | reverse %}
+
+<h2>Design Projects ({{ sorted_projects | size }})</h2>
+
+{% comment %} 
+Step 4: Loop through the sorted list and display the content.
+{% endcomment %}
+<div class="project-list">
+    {% for project in sorted_projects %}
+        <div class="project-item">
+            <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+            <p class="date">{{ project.date | date: "%B %d, %Y" }}</p>
+            <p>{{ project.excerpt | truncate: 150 }}</p>
+        </div>
+        <hr>
+    {% endfor %}
+</div>
