@@ -193,7 +193,7 @@ hr {
     width: 101%;
     filter: invert();
 }
-video {
+.video {
     width: 75%;
     height: auto;
     position: absolute;
@@ -424,7 +424,7 @@ video {
         width: 101%;
         filter: invert(0);
     }
-    video {
+    .video {
         width: 75%;
         height: auto;
         position: absolute;
@@ -529,7 +529,7 @@ video {
         width: clamp(1rem, 4vw, 3rem);
         height: clamp(1rem, 4vw, 3rem);
     }
-    video {
+    .video {
         height: 100vw;
         object-fit: cover;
     }
@@ -651,4 +651,5 @@ video {
     }
 
 }
+
 
