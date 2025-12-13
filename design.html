@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: category
 title: Design
 ---
 <!DOCTYPE html>
@@ -8,9 +8,7 @@ title: Design
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="landing">
-        <div class="landing-image"><img src="img/design.png" class="nd landing-img"></div>
-    </div>
+    <img src="img/design.png" class="nd landing-img">
     
     <div id="design">
         {% assign design_projects = site.projects | where: "category", "design" | sort: "date" | reverse %}
