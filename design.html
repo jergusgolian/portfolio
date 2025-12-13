@@ -10,10 +10,10 @@ title: Design
 <body>
     <div class="landing-div"><img src="img/design.png" class="nd landing-img"></div>
     
-    {% assign projects = site.projects | where: "category", "design" | sort: "date" | reverse %}
+    {% assign real_projects = site.projects | where: "category", "design" | sort: "date" | reverse %}
     
-    {% if design_projects.size > 0 %}
-        {% for project in projects %}
+    {% if real_projects.size > 0 %}
+        {% for project in real_projects %}
             
             <div class="text-image">
                 <div class="text">
