@@ -260,7 +260,7 @@ video {
 .landing-img {
     position: absolute;
     top: 50vh;
-    left: 50vw;
+    left: 50%;
     transform: translate(-50%, -50%);
     filter: invert();
 }
@@ -469,6 +469,9 @@ video {
     .landing-img {
         filter: invert(0);
     }
+    .landing-div {
+        filter: invert(0);
+    }
 }
 
 
@@ -633,6 +636,7 @@ video {
     }
 
 }
+
 
 
 
