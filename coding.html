@@ -10,7 +10,7 @@ layout: default
     <div class="tab"></div>
     
     <div id="design">
-        <h2>Design</h2>
+        <h2>Programovanie</h2>
         
         {% assign design_projects = site.projects | where: "category", "coding" | sort: "date" | reverse %}
         
@@ -27,7 +27,7 @@ layout: default
                 
             {% endfor %}
         {% else %}
-            <p>Momentálne nie sú k dispozícii žiadne projekty s kategóriou "design".</p>
+            <p>Momentálne nie sú k dispozícii žiadne projekty s kategóriou "coding".</p>
         {% endif %}
         </div>
 </body>
