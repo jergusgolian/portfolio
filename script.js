@@ -4,8 +4,31 @@ const navLinks = document.querySelectorAll('nav ul li');
 const indicator = document.querySelector('.indicator');
 const homeLink = document.querySelector('nav a:first-child');
 
-let userClicked = false; // <-- 1. NEW FLAG VARIABLE
+let userClicked = false; // <-- 1. FLAG VARIABLE
 let scrollTimeout; // Helper for the timeout
+
+// --- NEW: Define a mapping of standalone pages to their nav selectors ---
+const standalonePageMapping = {
+    'design.html': 'nav ul li a[href*="#design"]',
+    'videomaking.html': 'nav ul li a[href*="#videomaking"]',
+    'coding.html': 'nav ul li a[href*="#coding"]'
+};
+
+const currentPagePath = window.location.pathname;
+// Check if the current page is one of the standalone pages
+const isStandalonePage = Object.keys(standalonePageMapping).some(filename => 
+    currentPagePath.endsWith(filename)
+);
+let activeStandaloneLink = null;
+if (isStandalonePage) {
+    for (const [filename, selector] of Object.entries(standalonePageMapping)) {
+        if (currentPagePath.endsWith(filename)) {
+            activeStandaloneLink = document.querySelector(selector);
+            break;
+        }
+    }
+}
+// --- END NEW DEFINITIONS ---
 
 // Function to update the indicator's position (No changes here)
 function updateIndicatorPosition(activeElement) {
@@ -35,12 +58,26 @@ function updateIndicatorPosition(activeElement) {
     indicator.style.transition = 'left 0.3s ease-out, width 0.3s ease-out, top 0.3s ease-out';
 }
 
-// --- EXISTING CLICK AND LOAD LOGIC ---
-homeLink.classList.add('active'); 
-window.onload = function() {
-    window.scrollTo(0, 0);
-    updateIndicatorPosition(homeLink);
-};
+// --- 🚀 MODIFIED INITIALIZATION LOGIC ---
+if (isStandalonePage && activeStandaloneLink) {
+    // A standalone page (design.html, coding.html, etc.)
+    // Find the parent li element to activate
+    const liToActivate = activeStandaloneLink.parentNode;
+    if (liToActivate) {
+        liToActivate.classList.add('active'); // Activate the parent li
+        window.onload = function() {
+            updateIndicatorPosition(liToActivate);
+        };
+    }
+} else {
+    // Default behavior for index.html (or if link wasn't found)
+    homeLink.classList.add('active'); 
+    window.onload = function() {
+        window.scrollTo(0, 0);
+        updateIndicatorPosition(homeLink);
+    };
+}
+// --- END MODIFIED INITIALIZATION LOGIC ---
 
 // Click handler for navigation links (li elements)
 navLinks.forEach(item => {
@@ -100,7 +137,7 @@ const observerOptions = {
 };
 
 function observerCallback(entries) {
-    if (userClicked) return; // <-- 3. CHECK FLAG (If user clicked, do nothing)
+    if (userClicked || isStandalonePage) return; // <-- 3. CHECK FLAG & IGNORE SCROLL-SPY ON STANDALONE PAGES
     
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -126,7 +163,12 @@ function observerCallback(entries) {
 }
 
 const observer = new IntersectionObserver(observerCallback, observerOptions);
-sections.forEach(sec => observer.observe(sec));
+
+// --- 🚀 Only observe sections if not on a standalone page ---
+if (!isStandalonePage) {
+    sections.forEach(sec => observer.observe(sec));
+}
+// --- END MODIFIED SCROLL-SPY LOGIC ---
 
 
 console.clear();
