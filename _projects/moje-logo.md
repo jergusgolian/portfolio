@@ -1,5 +1,5 @@
 ---
-title_project: Moje logo
+title: Moje logo
 category: design
 image: img/moje-logo.png
 date: 2024-11-15 09:30:00 +0100
