@@ -72,10 +72,12 @@ h1 {
 }
 h2 {
     color: rgb(14, 14, 14);
-    margin-left: 10%;
     text-align: left;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: clamp(3rem, 3vw, 4rem);
+}
+h2:not(.nd) {
+    margin-left: 10%;
 }
 h3 {
     color: rgb(14, 14, 14);
@@ -635,6 +637,7 @@ video {
     }
 
 }
+
 
 
 
