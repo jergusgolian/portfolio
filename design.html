@@ -1,34 +1,44 @@
 {% comment %} 
-Step 1: Get all items from the 'projects' collection (replace 'projects' 
-if your collection has a different name, e.g., 'posts').
+1. Access the 'projects' collection (site.projects)
+2. Filter the collection to only keep items where 'category' is 'design'
+3. Sort the resulting list by the 'date' field
+4. Reverse the order so the newest projects show up at the top
 {% endcomment %}
-{% assign all_projects = site.projects %}
+---
+layout: default
+title: Design
+---
+
+
+{% assign design_projects = site.projects | where: "category", "design" | sort: "date" | reverse %}
+
+
 
 {% comment %} 
-Step 2: Filter the projects to only include those where the 'category' is 'design'.
-The 'where' filter is used for this selection.
+Display a heading for the section.
 {% endcomment %}
-{% assign design_projects = all_projects | where: "category", "design" %}
 
-{% comment %} 
-Step 3: Sort the filtered projects by the 'date' field. The 'reverse' 
-filter is added to show the newest projects first (descending order).
-Remove 'reverse' if you want the oldest first.
-{% endcomment %}
-{% assign sorted_projects = design_projects | sort: "date" | reverse %}
 
-<h2>Design Projects ({{ sorted_projects | size }})</h2>
+<h2>Design Projects ({{ design_projects | size }} total)</h2>
 
-{% comment %} 
-Step 4: Loop through the sorted list and display the content.
-{% endcomment %}
-<div class="project-list">
-    {% for project in sorted_projects %}
-        <div class="project-item">
-            <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
-            <p class="date">{{ project.date | date: "%B %d, %Y" }}</p>
-            <p>{{ project.excerpt | truncate: 150 }}</p>
+{% if design_projects.size > 0 %}
+    <div class="projects-grid">
+    {% for project in design_projects %}
+        <div class="project-card">
+            <a href="{{ project.url | relative_url }}">
+                <h3>{{ project.title }}</h3>
+            </a>
+            <p class="project-meta">
+                Kategória: **{{ project.category | capitalize }}** | Dátum: {{ project.date | date: "%Y-%m-%d" }}
+            </p>
+            <p>{{ project.excerpt | default: project.content | strip_html | truncatewords: 30 }}</p>
+            
+            <a href="{{ project.url | relative_url }}" class="read-more-link">
+                Čítať viac &rarr;
+            </a>
         </div>
-        <hr>
     {% endfor %}
-</div>
+    </div>
+{% else %}
+    <p>Momentálne nie sú k dispozícii žiadne projekty s kategóriou "design".</p>
+{% endif %}
