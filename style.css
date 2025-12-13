@@ -99,9 +99,9 @@ nav {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(3vw);
     z-index: 5;
-    animation-name: fadeIn;
-    animation-duration: 0.5s;
-    animation-delay: 2.4s;
+    opacity: 1;
+    animation-name: none;
+    animation-duration: 0.5s
     animation-fill-mode: forwards;
     overflow: hidden;
 }
@@ -642,6 +642,7 @@ hr {
     }
 
 }
+
 
 
 
