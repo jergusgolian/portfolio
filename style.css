@@ -145,9 +145,9 @@ img:not(.nd) {
 
     opacity: 0;
     animation-name: fadeIn; /* Name of the @keyframes rule you defined */
-    animation-duration: 0.6s; /* How long the animation takes (e.g., 2 seconds) */
+    animation-duration: 0.3s; /* How long the animation takes (e.g., 2 seconds) */
     animation-timing-function: ease-in; /* Speed curve of the animation */
-    animation-delay: 0.4s; /* Time before the animation starts */
+    animation-delay: 0.15s; /* Time before the animation starts */
     animation-iteration-count: 1; /* Number of times to repeat (1 for a single run) */
     animation-fill-mode: forwards; /* Ensures the element stays visible after the animation */
 }
@@ -671,6 +671,7 @@ video {
     }
 
 }
+
 
 
 
