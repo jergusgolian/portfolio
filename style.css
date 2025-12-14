@@ -259,12 +259,27 @@ video {
 .tab {
     height: 90%;
 }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .landing-img {
     position: absolute;
     top: 50vh;
     left: 50%;
     transform: translate(-50%, -50%);
     height: 7vw;
+
+    animation-name: fadeIn; /* Name of the @keyframes rule you defined */
+    animation-duration: 2s; /* How long the animation takes (e.g., 2 seconds) */
+    animation-timing-function: ease-in; /* Speed curve of the animation */
+    animation-delay: 0s; /* Time before the animation starts */
+    animation-iteration-count: 1; /* Number of times to repeat (1 for a single run) */
+    animation-fill-mode: forwards; /* Ensures the element stays visible after the animation */
 }
 
 /* ----------------------------------------------------------------------------------------------------------------------------------*/
@@ -640,6 +655,7 @@ video {
     }
 
 }
+
 
 
 
