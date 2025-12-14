@@ -128,12 +128,27 @@ img:not(.nd) {
 .logo {
     filter: invert();
 }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .text-image {
     display: flex;
     align-items: stretch;
     width: 80%;
     margin: 0 auto 50px auto;
     flex-direction: row;
+    
+    animation-name: fadeIn; /* Name of the @keyframes rule you defined */
+    animation-duration: 1s; /* How long the animation takes (e.g., 2 seconds) */
+    animation-timing-function: ease-in; /* Speed curve of the animation */
+    animation-delay: 0.5s; /* Time before the animation starts */
+    animation-iteration-count: 1; /* Number of times to repeat (1 for a single run) */
+    animation-fill-mode: forwards; /* Ensures the element stays visible after the animation */
 }
 .main > div:nth-of-type(2n+3) .text-image {
     flex-direction: row-reverse;
@@ -655,6 +670,7 @@ video {
     }
 
 }
+
 
 
 
