@@ -103,7 +103,7 @@ nav {
     z-index: 5;
     opacity: 1;
     animation-name: none;
-    animation-duration: 0.5s
+    animation-duration: 0.5s;
     animation-fill-mode: forwards;
     overflow: hidden;
 }
@@ -264,6 +264,7 @@ video {
     top: 50vh;
     left: 50%;
     transform: translate(-50%, -50%);
+    height: 7vw;
 }
 
 /* ----------------------------------------------------------------------------------------------------------------------------------*/
@@ -514,6 +515,9 @@ video {
     video {
         height: 100vw;
         object-fit: cover;
+    }
+    .landing-img {
+        height: 10vw;
     }
     .hamburger-toggle .bar {
         width: 150%;
