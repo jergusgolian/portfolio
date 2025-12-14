@@ -142,7 +142,8 @@ img:not(.nd) {
     width: 80%;
     margin: 0 auto 50px auto;
     flex-direction: row;
-    
+
+    opacity: 0;
     animation-name: fadeIn; /* Name of the @keyframes rule you defined */
     animation-duration: 1s; /* How long the animation takes (e.g., 2 seconds) */
     animation-timing-function: ease-in; /* Speed curve of the animation */
@@ -670,6 +671,7 @@ video {
     }
 
 }
+
 
 
 
