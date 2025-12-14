@@ -580,7 +580,7 @@ video {
         display: none;
     }
     .text-image:not(.info), .main > div:nth-of-type(2n+3) .text-image:not(.info)  {
-        background-color: #151515;
+        background-color: #D3D3D3;
         padding: 5vw;
         border-radius: 10vw;
         flex-direction: column-reverse;
@@ -634,9 +634,13 @@ video {
         .web-button:active {
             box-shadow: 0 0vh gray;
         }
+        .text-image:not(.info), .main > div:nth-of-type(2n+3) .text-image:not(.info)  {
+            background-color: #151515;
+        }
     }
 
 }
+
 
 
 
