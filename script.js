@@ -4,10 +4,10 @@ const navLinks = document.querySelectorAll('nav ul li');
 const indicator = document.querySelector('.indicator');
 const homeLink = document.querySelector('nav a:first-child');
 
-let userClicked = false; // <-- 1. NEW FLAG VARIABLE
+let userClicked = false; // Flag to stop scroll-spy after a user click
 let scrollTimeout; // Helper for the timeout
 
-// --- NEW/CORRECTED STANDALONE PAGE LOGIC ---
+// --- 🚀 STANDALONE PAGE LOGIC (CORRECTED & ROBUST) ---
 // Define a mapping of standalone page directories to their nav selectors.
 const standalonePageMapping = {
     // Keys match the directory/ (e.g., 'design/' for /design/index.html)
@@ -19,7 +19,7 @@ const standalonePageMapping = {
 
 const currentPageURL = window.location.href; 
 let isStandalonePage = false;
-let activeStandaloneLink = null;
+let activeStandaloneLink = null; // Stores the selector string
 
 for (const [directory, selector] of Object.entries(standalonePageMapping)) {
     // Robust check for URLs like .../directory/ or .../directory/index.html
@@ -27,12 +27,11 @@ for (const [directory, selector] of Object.entries(standalonePageMapping)) {
     
     if (directoryPattern.test(currentPageURL)) {
         isStandalonePage = true;
-        // The script must only query the document AFTER it's loaded, but we need the link now
         activeStandaloneLink = selector; 
         break;
     }
 }
-// --- END NEW/CORRECTED STANDALONE PAGE LOGIC ---
+// --- END STANDALONE PAGE LOGIC ---
 
 
 // Function to update the indicator's position (No changes here)
@@ -63,11 +62,11 @@ function updateIndicatorPosition(activeElement) {
     indicator.style.transition = 'left 0.3s ease-out, width 0.3s ease-out, top 0.3s ease-out';
 }
 
-// --- MODIFIED INITIALIZATION LOGIC (Handles both requests 1 & 2) ---
+// --- 🚀 CORRECTED INITIALIZATION LOGIC (Fixes Requests 1, 2, and Flashing) ---
 if (isStandalonePage && activeStandaloneLink) {
-    // 1. Standalone Page Logic: Find and activate the correct link
+    // Logic for Standalone Pages (e.g., /coding/)
     window.onload = function() {
-        // Must query the element here, after the DOM is guaranteed to be loaded
+        // Query the link element using the stored selector
         const linkElement = document.querySelector(activeStandaloneLink);
         const liToActivate = linkElement ? linkElement.parentNode : null;
         
@@ -75,32 +74,40 @@ if (isStandalonePage && activeStandaloneLink) {
             navLinks.forEach(i => i.classList.remove('active'));
             homeLink.classList.remove('active');
             liToActivate.classList.add('active'); // Activate the correct li
-            updateIndicatorPosition(liToActivate);
         }
-        // No need to scroll if on a standalone page
-        
-        // 2. Cursor Fix: Initialize cursor position to center (or mouse if moved)
+
+        // 2. Cursor Fix: Initialize cursor position to current mouse position
         circle.x = mouse.x;
         circle.y = mouse.y;
+
+        // 3. Indicator Fix: Use a small timeout to wait for browser rendering
+        setTimeout(() => {
+            // Position the indicator on the found link, or home link if not found
+            updateIndicatorPosition(liToActivate || homeLink);
+        }, 50); 
     };
 } else {
-    // Default (index.html) behavior
+    // Default (index.html or not found) behavior
     homeLink.classList.add('active'); 
     window.onload = function() {
         window.scrollTo(0, 0);
-        updateIndicatorPosition(homeLink);
-
-        // 2. Cursor Fix: Initialize cursor position to center (or mouse if moved)
+        
+        // 2. Cursor Fix: Initialize cursor position to current mouse position
         circle.x = mouse.x;
         circle.y = mouse.y;
+
+        // 3. Indicator Fix: Use a small timeout
+        setTimeout(() => {
+            updateIndicatorPosition(homeLink);
+        }, 50);
     };
 }
-// --- END MODIFIED INITIALIZATION LOGIC ---
+// --- END CORRECTED INITIALIZATION LOGIC ---
 
 // Click handler for navigation links (li elements)
 navLinks.forEach(item => {
     item.addEventListener('click', (e) => {
-        userClicked = true; // <-- 2. SET FLAG ON CLICK
+        userClicked = true; // Set flag to disable scroll-spy
         
         navLinks.forEach(i => i.classList.remove('active'));
         homeLink.classList.remove('active'); 
@@ -114,13 +121,13 @@ navLinks.forEach(item => {
 
         // Reset the flag after the smooth scroll is likely finished
         clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(() => { userClicked = false; }, 1000); // 1 second
+        scrollTimeout = setTimeout(() => { userClicked = false; }, 1000); // 1 second delay
     });
 });
 
 // Click handler for the logo/main link
 homeLink.addEventListener('click', (e) => {
-    userClicked = true; // <-- 2. SET FLAG ON CLICK (also for home)
+    userClicked = true; // Set flag to disable scroll-spy
     
     navLinks.forEach(i => i.classList.remove('active'));
     homeLink.classList.add('active');
@@ -133,7 +140,7 @@ homeLink.addEventListener('click', (e) => {
 
     // Reset the flag after the smooth scroll is likely finished
     clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(() => { userClicked = false; }, 1000); // 1 second
+    scrollTimeout = setTimeout(() => { userClicked = false; }, 1000); // 1 second delay
 });
 hamburger.addEventListener('click', () => {
     nav.classList.toggle('menu-open');
@@ -146,16 +153,16 @@ window.addEventListener('resize', () => {
     updateIndicatorPosition(currentActive);
 });
 
-// --- 🚀 SCROLL-SPY LOGIC ---
+// --- SCROLL-SPY LOGIC ---
 const sections = document.querySelectorAll('.main > div, #landing');
 const observerOptions = {
     root: null, 
-    rootMargin: '-50% 0px -50% 0px',
+    rootMargin: '-50% 0px -50% 0px', // Activates section when it hits the middle of the viewport
     threshold: 0
 };
 
 function observerCallback(entries) {
-    // 3. CHECK FLAG & ADD STANDALONE PAGE CHECK
+    // Ignore scroll-spy if the user clicked (smooth scroll is ongoing) or is on a standalone page
     if (userClicked || isStandalonePage) return; 
     
     entries.forEach(entry => {
@@ -182,6 +189,7 @@ function observerCallback(entries) {
 }
 
 const observer = new IntersectionObserver(observerCallback, observerOptions);
+
 // Only observe sections if not on a standalone page
 if (!isStandalonePage) {
     sections.forEach(sec => observer.observe(sec));
@@ -194,7 +202,7 @@ console.clear();
 const circleElement = document.querySelector('.circle');
 const scircleElement = document.querySelector('.small-circle');
 
-// --- NEW: Add mousedown/mouseup listeners for 'clicked' state ---
+// --- Cursor Hover/Click States ---
 document.addEventListener('mousedown', () => {
     scircleElement.classList.add('clicked');
 });
@@ -203,10 +211,8 @@ document.addEventListener('mouseup', () => {
     scircleElement.classList.remove('clicked');
 });
 
-// --- NEW: Select all interactive elements ---
 const interactiveElements = document.querySelectorAll('a, button, .web-button');
 
-// Function to handle cursor class change on hover
 function addHoverClass() {
     scircleElement.classList.add('hovering');
 }
@@ -215,19 +221,17 @@ function removeHoverClass() {
     scircleElement.classList.remove('hovering');
 }
 
-// Add event listeners to all interactive elements
 interactiveElements.forEach(element => {
     element.addEventListener('mouseenter', addHoverClass);
     element.addEventListener('mouseleave', removeHoverClass);
 });
-// --- END NEW CODE ---
+// --- End Cursor States ---
 
-// Create objects to track mouse position and custom cursor position
+// --- Custom Cursor Animation Variables ---
 const mouse = { x: 0, y: 0 }; // Track current mouse position
 const previousMouse = { x: 0, y: 0 } // Store the previous mouse position
-const circle = { x: 0, y: 0 }; // Track the circle position
+const circle = { x: 0, y: 0 }; // Track the circle position (initialized in window.onload)
 
-// Initialize variables to track scaling and rotation
 let currentScale = 0; // Track current scale value
 let currentAngle = 0; // Track current angle value
 
@@ -237,10 +241,10 @@ mouse.x = e.x;
 mouse.y = e.y;
 });
 
-// Smoothing factor for cursor movement speed (0 = smoother, 1 = instant)
+// Smoothing factor for cursor movement speed
 const speed = 0.5;
 
-// Start animation
+// Start animation loop
 const tick = () => {
 // MOVE
 // Calculate circle movement based on mouse position and smoothing
@@ -249,33 +253,24 @@ circle.y += (mouse.y - circle.y) * speed;
 // Create a transformation string for cursor translation
 const translateTransform = `translate(${circle.x}px, ${circle.y}px)`;
 
-// SQUEEZE
-// 1. Calculate the change in mouse position (deltaMouse)
+// SQUEEZE (Stretch/Squash effect based on velocity)
 const deltaMouseX = mouse.x - previousMouse.x;
 const deltaMouseY = mouse.y - previousMouse.y;
-// Update previous mouse position for the next frame
 previousMouse.x = mouse.x;
 previousMouse.y = mouse.y;
-// 2. Calculate mouse velocity using Pythagorean theorem and adjust speed
 const mouseVelocity = Math.min(Math.sqrt(deltaMouseX**2 + deltaMouseY**2) * 4, 150); 
-// 3. Convert mouse velocity to a value in the range [0, 0.5]
 const scaleValue = (mouseVelocity / 150) * 0.5;
-// 4. Smoothly update the current scale
 currentScale += (scaleValue - currentScale) * speed;
-// 5. Create a transformation string for scaling
 let scaleTransform = `scale(${1 + currentScale}, ${1 - currentScale})`;
 
-// ROTATE
-// 1. Calculate the angle using the atan2 function
+// ROTATE (Rotate to follow the direction of movement)
 const angle = Math.atan2(deltaMouseY, deltaMouseX) * 180 / Math.PI;
-// 2. Check for a threshold to reduce shakiness at low mouse velocity
 if (mouseVelocity > 20) {
     currentAngle = angle;
 }
-// 3. Create a transformation string for rotation
 const rotateTransform = `rotate(${currentAngle}deg)`;
 
-// Apply all transformations to the circle element in a specific order: translate -> rotate -> scale
+// Apply all transformations
 circleElement.style.transform = `${translateTransform} ${rotateTransform} ${scaleTransform}`;
 scircleElement.style.transform = `${translateTransform} ${rotateTransform} ${scaleTransform}`;
 
