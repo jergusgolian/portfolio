@@ -7,28 +7,32 @@ const homeLink = document.querySelector('nav a:first-child');
 let userClicked = false; // <-- 1. FLAG VARIABLE
 let scrollTimeout; // Helper for the timeout
 
-// --- NEW: Define a mapping of standalone pages to their nav selectors ---
+// --- 🚀 CORRECTED: Define a mapping of standalone page directories to their nav selectors ---
 const standalonePageMapping = {
-    'design.html': 'nav ul li a[href*="#design"]',
-    'videomaking.html': 'nav ul li a[href*="#videomaking"]',
-    'coding.html': 'nav ul li a[href*="#coding"]'
+    // Keys now use the directory name (e.g., 'design/' for /design/index.html)
+    'design/': 'nav ul li a[href*="#design"]',
+    'videomaking/': 'nav ul li a[href*="#videomaking"]',
+    'coding/': 'nav ul li a[href*="#coding"]'
 };
 
-// 🚀 MODIFIED CHECK: Use the full URL (href) to robustly check the filename
+// 🚀 CORRECTED CHECK: Use a robust check against the directory structure
 const currentPageURL = window.location.href; 
 let isStandalonePage = false;
 let activeStandaloneLink = null;
 
-for (const [filename, selector] of Object.entries(standalonePageMapping)) {
-    // Check if the URL contains the filename at the end of the path
-    // Using includes('/' + filename) makes it resilient to local file paths
-    if (currentPageURL.includes('/' + filename)) {
+for (const [directory, selector] of Object.entries(standalonePageMapping)) {
+    // Create a regular expression to match either:
+    // 1. /directory/index.html
+    // 2. /directory/ (which is the user-facing URL)
+    const directoryPattern = new RegExp(`\/${directory}(index.html)?$`);
+    
+    if (directoryPattern.test(currentPageURL)) {
         isStandalonePage = true;
         activeStandaloneLink = document.querySelector(selector);
         break;
     }
 }
-// --- END MODIFIED DEFINITIONS ---
+// --- END CORRECTED DEFINITIONS ---
 
 // Function to update the indicator's position (No changes here)
 function updateIndicatorPosition(activeElement) {
@@ -58,9 +62,9 @@ function updateIndicatorPosition(activeElement) {
     indicator.style.transition = 'left 0.3s ease-out, width 0.3s ease-out, top 0.3s ease-out';
 }
 
-// --- 🚀 MODIFIED INITIALIZATION LOGIC ---
+// --- 🚀 MODIFIED INITIALIZATION LOGIC (No changes needed here, as it relies on the corrected variables) ---
 if (isStandalonePage && activeStandaloneLink) {
-    // A standalone page (design.html, coding.html, etc.)
+    // A standalone page (design/, coding/, etc.)
     // Find the parent li element to activate
     const liToActivate = activeStandaloneLink.parentNode;
     if (liToActivate) {
