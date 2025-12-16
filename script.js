@@ -4,35 +4,36 @@ const navLinks = document.querySelectorAll('nav ul li');
 const indicator = document.querySelector('.indicator');
 const homeLink = document.querySelector('nav a:first-child');
 
-let userClicked = false; // <-- 1. FLAG VARIABLE
+let userClicked = false; // <-- 1. NEW FLAG VARIABLE
 let scrollTimeout; // Helper for the timeout
 
-// --- 🚀 CORRECTED: Define a mapping of standalone page directories to their nav selectors ---
+// --- NEW/CORRECTED STANDALONE PAGE LOGIC ---
+// Define a mapping of standalone page directories to their nav selectors.
 const standalonePageMapping = {
-    // Keys now use the directory name (e.g., 'design/' for /design/index.html)
+    // Keys match the directory/ (e.g., 'design/' for /design/index.html)
+    // Selectors point to the anchor tags within the nav list items.
     'design/': 'nav ul li a[href*="#design"]',
     'videomaking/': 'nav ul li a[href*="#videomaking"]',
     'coding/': 'nav ul li a[href*="#coding"]'
 };
 
-// 🚀 CORRECTED CHECK: Use a robust check against the directory structure
 const currentPageURL = window.location.href; 
 let isStandalonePage = false;
 let activeStandaloneLink = null;
 
 for (const [directory, selector] of Object.entries(standalonePageMapping)) {
-    // Create a regular expression to match either:
-    // 1. /directory/index.html
-    // 2. /directory/ (which is the user-facing URL)
+    // Robust check for URLs like .../directory/ or .../directory/index.html
     const directoryPattern = new RegExp(`\/${directory}(index.html)?$`);
     
     if (directoryPattern.test(currentPageURL)) {
         isStandalonePage = true;
-        activeStandaloneLink = document.querySelector(selector);
+        // The script must only query the document AFTER it's loaded, but we need the link now
+        activeStandaloneLink = selector; 
         break;
     }
 }
-// --- END CORRECTED DEFINITIONS ---
+// --- END NEW/CORRECTED STANDALONE PAGE LOGIC ---
+
 
 // Function to update the indicator's position (No changes here)
 function updateIndicatorPosition(activeElement) {
@@ -62,27 +63,36 @@ function updateIndicatorPosition(activeElement) {
     indicator.style.transition = 'left 0.3s ease-out, width 0.3s ease-out, top 0.3s ease-out';
 }
 
-// --- 🚀 MODIFIED INITIALIZATION LOGIC (No changes needed here, as it relies on the corrected variables) ---
+// --- MODIFIED INITIALIZATION LOGIC (Handles both requests 1 & 2) ---
 if (isStandalonePage && activeStandaloneLink) {
-    // A standalone page (design/, coding/, etc.)
-    // Find the parent li element to activate
-    const liToActivate = activeStandaloneLink.parentNode;
-    if (liToActivate) {
-        // First remove all active classes to be safe
-        navLinks.forEach(i => i.classList.remove('active'));
-        homeLink.classList.remove('active');
+    // 1. Standalone Page Logic: Find and activate the correct link
+    window.onload = function() {
+        // Must query the element here, after the DOM is guaranteed to be loaded
+        const linkElement = document.querySelector(activeStandaloneLink);
+        const liToActivate = linkElement ? linkElement.parentNode : null;
         
-        liToActivate.classList.add('active'); // Activate the correct li
-        window.onload = function() {
+        if (liToActivate) {
+            navLinks.forEach(i => i.classList.remove('active'));
+            homeLink.classList.remove('active');
+            liToActivate.classList.add('active'); // Activate the correct li
             updateIndicatorPosition(liToActivate);
-        };
-    }
+        }
+        // No need to scroll if on a standalone page
+        
+        // 2. Cursor Fix: Initialize cursor position to center (or mouse if moved)
+        circle.x = mouse.x;
+        circle.y = mouse.y;
+    };
 } else {
-    // Default behavior for index.html (or if link wasn't found)
+    // Default (index.html) behavior
     homeLink.classList.add('active'); 
     window.onload = function() {
         window.scrollTo(0, 0);
         updateIndicatorPosition(homeLink);
+
+        // 2. Cursor Fix: Initialize cursor position to center (or mouse if moved)
+        circle.x = mouse.x;
+        circle.y = mouse.y;
     };
 }
 // --- END MODIFIED INITIALIZATION LOGIC ---
@@ -145,7 +155,8 @@ const observerOptions = {
 };
 
 function observerCallback(entries) {
-    if (userClicked || isStandalonePage) return; // <-- 3. CHECK FLAG & IGNORE SCROLL-SPY ON STANDALONE PAGES
+    // 3. CHECK FLAG & ADD STANDALONE PAGE CHECK
+    if (userClicked || isStandalonePage) return; 
     
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -171,12 +182,10 @@ function observerCallback(entries) {
 }
 
 const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-// --- 🚀 Only observe sections if not on a standalone page ---
+// Only observe sections if not on a standalone page
 if (!isStandalonePage) {
     sections.forEach(sec => observer.observe(sec));
 }
-// --- END MODIFIED SCROLL-SPY LOGIC ---
 
 
 console.clear();
