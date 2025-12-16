@@ -37,7 +37,7 @@ body {
 
 html {
     scroll-behavior: smooth;
-    cursor: none;
+    /*cursor: none;*/
 }
 body {
     background-color: whitesmoke;
@@ -671,6 +671,7 @@ video {
     }
 
 }
+
 
 
 
