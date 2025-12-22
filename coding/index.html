@@ -10,7 +10,7 @@ title: Coding
 <body>
     <div class="landing-div"><img src="/portfolio/img/coding.png" class="nd landing-img"></div>
     
-    {% assign real_projects = site.projects | where: "category", "coding" | sort: "date" | reverse %}
+    {% assign real_projects = site.projects | where: "category", "coding" | sort: "date"%}
     
     {% if real_projects.size > 0 %}
         {% for project in real_projects %}
