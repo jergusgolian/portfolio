@@ -10,7 +10,7 @@ title: Videography
 <body>
     <div class="landing-div"><img src="/portfolio/img/videomaking.png" class="nd landing-img"></div>
     
-    {% assign real_projects = site.projects | where: "category", "videomaking" | sort: "date" | reverse %}
+    {% assign real_projects = site.projects | where: "category", "videomaking" | sort: "date"%}
     
     {% if real_projects.size > 0 %}
         {% for project in real_projects %}
