@@ -528,7 +528,7 @@ video {
         -webkit-tap-highlight-color: transparent;
     }
     .hamburger-toggle {
-        display: flex;
+        display: block;
         flex-direction: column;
         justify-content: space-between;
         width: 50px;
@@ -671,6 +671,7 @@ video {
     }
 
 }
+
 
 
 
