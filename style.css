@@ -551,8 +551,8 @@ video {
         height: 10vw;
     }
     .hamburger-toggle .bar {
-        width: 150%;
-        height: 0.8vw;
+        width: 100%;
+        height: 3px;
         background-color: whitesmoke;
         border-radius: 20vw;
         transition: transform 0.3s, opacity 0.3s;
@@ -671,6 +671,7 @@ video {
     }
 
 }
+
 
 
 
