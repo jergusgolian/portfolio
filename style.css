@@ -575,15 +575,6 @@ video {
         transition: max-height 1s;
         transition: max-height 0.3s ease-in-out;
     }
-    nav.menu-open .bar:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 6px);
-    }
-    nav.menu-open .bar:nth-child(2) {
-        opacity: 0;
-    }
-    nav.menu-open .bar:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -6px);
-    }
     html {
         cursor: default; /* Reset global cursor */
     }
@@ -671,6 +662,7 @@ video {
     }
 
 }
+
 
 
 
