@@ -4,4 +4,4 @@ description: Personal portfolio powered by Jekyll and GitHub Pages
 collections:
   projects:
     output: false
-baseurl: "/portfolio"
+baseurl: ""
