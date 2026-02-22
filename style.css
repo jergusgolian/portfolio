@@ -121,6 +121,7 @@ nav ul li {
 }
 img:not(.nd) {
     width: clamp(5vw, 50%, 10vw);
+    width: 5vw;
     object-fit: cover;
     border-radius: 2vw;
     transition: 0.3s;
@@ -665,6 +666,7 @@ video {
     }
 
 }
+
 
 
 
