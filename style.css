@@ -120,9 +120,9 @@ nav ul li {
     margin: 10px 20px;
 }
 img:not(.nd) {
-    width: clamp(5vw, 50%, 10vw);
-    width: 5vw;
-    object-fit: cover;
+    width: 50%;
+    max-height: 5vh;
+    object-fit: contain;
     border-radius: 2vw;
     transition: 0.3s;
 }
@@ -666,6 +666,7 @@ video {
     }
 
 }
+
 
 
 
