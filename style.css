@@ -125,7 +125,7 @@ img:not(.nd) {
     object-fit: cover;
     border-radius: 2vw;
 }
-img:not(.nd):hover {
+img:hover:not(.nd) {
     border-radius: 0px;
 }
 .logo {
@@ -665,6 +665,7 @@ video {
     }
 
 }
+
 
 
 
