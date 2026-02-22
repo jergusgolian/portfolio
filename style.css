@@ -120,10 +120,10 @@ nav ul li {
     margin: 10px 20px;
 }
 img:not(.nd) {
-    border-radius: 35px;
-    width: 50%;
+    height: 100%;
     object-fit: cover;
     border-radius: 2vw;
+    transition: all 0.3s;
 }
 img:hover:not(.nd) {
     border-radius: 0px;
@@ -665,6 +665,7 @@ video {
     }
 
 }
+
 
 
 
