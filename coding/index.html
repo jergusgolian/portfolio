@@ -10,22 +10,24 @@ title: Coding
 <body>
     <div class="landing-div"><img src="/portfolio/img/graphics/coding.png" class="nd landing-img"></div>
     
-    {% assign real_projects = site.projects | where: "category", "coding" | sort: "date"%}
-    
-    {% if real_projects.size > 0 %}
-        {% for project in real_projects %}
-            
-            <div class="text-image">
-                <div class="text">
-                    <h2 class="nd">{{ project.title }}</h2>
-                    {{ project.content }}
+    <div class="main">
+        {% assign real_projects = site.projects | where: "category", "coding" | sort: "date" | reversed%}
+        
+        {% if real_projects.size > 0 %}
+            {% for project in real_projects %}
+                
+                <div class="text-image">
+                    <div class="text">
+                        <h2 class="nd">{{ project.title }}</h2>
+                        {{ project.content }}
+                    </div>
+                    <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
                 </div>
-                <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
-            </div>
-            
-        {% endfor %}
-    {% else %}
-        <p>Momentálne nie sú k dispozícii žiadne projekty s kategóriou "coding".</p>
-    {% endif %}
+                
+            {% endfor %}
+        {% else %}
+            <p>Momentálne nie sú k dispozícii žiadne projekty s kategóriou "coding".</p>
+        {% endif %}
+    </div>
 </body>
 </html>
