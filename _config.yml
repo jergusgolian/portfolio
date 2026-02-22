@@ -1,7 +1,9 @@
-title: Jerguš Golian
-description: Personal portfolio powered by Jekyll and GitHub Pages
+title: "Jerguš Golian"
+description: "Personal portfolio powered by Jekyll and GitHub Pages"
 
 collections:
   projects:
-    output: false
+    output: true
+
 baseurl: "/portfolio"
+url: "https://jergusgolian.github.io"
