@@ -157,11 +157,16 @@ img:hover:not(.nd) {
     animation-iteration-count: 1; /* Number of times to repeat (1 for a single run) */
     animation-fill-mode: forwards; /* Ensures the element stays visible after the animation */
 }
-.main > div:nth-of-type(2n+3) .text-image {
+.main .text-image:nth-of-type(even) {
     flex-direction: row-reverse;
 }
-.main > div:nth-of-type(2n+3) .text-image .text{
+.main .text-image:nth-of-type(even) .text {
     margin-left: 5%;
+    margin-right: 0;
+}
+.main .text-image:nth-of-type(odd) .text {
+    margin-right: 5%;
+    margin-left: 0;
 }
 .quote, .quote p {
     text-align: center;
@@ -668,6 +673,7 @@ video {
     }
 
 }
+
 
 
 
