@@ -1,7 +1,7 @@
 ---
 title: SR-72 - Deathstar
 category: design
-image: img/deathstar.png
+image: img/design/deathstar.png
 date: 2026-01-31 +0200
 ---
 Tretí plagát v sérii plagátov ktoré robím v rámci programu DofE.
