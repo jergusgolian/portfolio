@@ -120,10 +120,13 @@ nav ul li {
     margin: 10px 20px;
 }
 img:not(.nd) {
-    height: 100%;
-    object-fit: cover;
-    border-radius: 2vw;
-    transition: all 0.3s;
+    flex: 1;               /* Let the image take up proportional width */
+    width: 50%;            /* Standardize width for desktop */
+    height: auto;          /* Reset height */
+    min-height: 0;         /* Allow it to shrink if the text is short */
+    object-fit: cover;     /* Crops the image to fit the text's height */
+    border-radius: 2vw;    /* Keep your existing style */
+    transition: 0.3s;      /* Keep your existing transition */
 }
 img:hover:not(.nd) {
     border-radius: 0px;
