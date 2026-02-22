@@ -20,7 +20,7 @@ title: Design
                     <h2 class="nd">{{ project.title }}</h2>
                     {{ project.content }}
                 </div>
-                <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
+                <img src="{{ project.image | relative_url }}" alt="{{ project.title }}" class="design-img">
             </div>
             
         {% endfor %}
