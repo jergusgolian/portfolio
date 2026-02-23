@@ -12,18 +12,30 @@ title: Dizajn
     
     <div class="main">
         {% assign real_projects = site.projects | where: "category", "design" | sort: "date" | reverse %}
-        
+
         {% if real_projects.size > 0 %}
             {% for project in real_projects %}
-                
                 <div class="text-image">
                     <div class="text">
                         <h2 class="nd">{{ project.title }}</h2>
                         {{ project.content }}
+        
+                        <div class="project-meta">
+                            <time class="project-date" datetime="{{ project.date | date: '%Y-%m-%d' }}">
+                                {{ project.date | date: "%B %Y" }}
+                            </time>
+        
+                            {% if project.tags.size > 0 %}
+                                <div class="tag-container">
+                                    {% for tag in project.tags %}
+                                        <span class="tag-pill">{{ tag }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
                     </div>
                     <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
                 </div>
-                
             {% endfor %}
         {% else %}
             <p>Momentálne nie sú k dispozícii žiadne projekty s kategóriou "design".</p>
