@@ -3,6 +3,7 @@ title: Moje logo
 category: design
 image: img/design/moje-logo.png
 date: 2025-08-10 +0200
+tags: logo
 ---
 Toto logo som si vytvoril preto, lebo som žiadne nemal a mysele som si že jedno potrebujem.
 Celý kreatívny postup je zcela originálny. Od skice až po finálnu animáciu.
