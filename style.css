@@ -344,10 +344,9 @@ video {
 
 .search-bar {
     width: 15vw;
-    height: 1vw;
     display: flex;
     justify-content: start;
-    padding: 0.25vw;
+    padding: 0.5vw;
     background-color: #333;
     backdrop-filter: blur(5vw);
     border-radius: 20vw;
