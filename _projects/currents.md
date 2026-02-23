@@ -3,7 +3,7 @@ title: Currents - Tame Impala
 category: design
 image: img/design/tame-impala.png
 date: 2026-01-06 +0200
-tags: plagát
+tags: Plagát
 used: Photoshop
 ---
 Dnes som skúsil tvorenie vintage plagátov. Vybral som si album kapely Tame Imapala, lebo som si myslel, že sa to dosť hodí k tomuto štýlu.

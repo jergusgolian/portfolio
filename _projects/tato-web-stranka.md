@@ -3,7 +3,7 @@ title: Táto web-stránka
 category: coding
 image: img/my-setup.png
 date: 2026-11-29 +0200
-tags: web-stránka
+tags: Web-stránka
 used: HTML, CSS, JavaScript, Jekyll
 ---
 Túto stránku som vytvoril ako cestu k publishnutiu mojich projektov online.

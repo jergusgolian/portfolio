@@ -3,7 +3,7 @@ title: Dealbreaker
 category: coding
 image: img/dealbreaker.png
 date: 2025-12-21 +0200
-tags: hra
+tags: Videohra
 used: Python
 ---
 Kartová hra podobná blackjacku s malým twistom. Existujú špeciálny žolíci.

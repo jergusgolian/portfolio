@@ -3,7 +3,7 @@ title: SR-72 - Darkstar
 category: design
 image: img/design/darkstar.png
 date: 2026-01-23 +0200
-tags: plagát
+tags: Plagát
 used: Photoshop
 ---
 Tretí plagát v sérii plagátov ktoré robím v rámci programu DofE.
