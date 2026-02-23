@@ -343,11 +343,16 @@ video {
 }
 
 .search-bar {
-    width: 10vw;
-    height: 2vw;
+    width: 30vw;
+    height: 5vw;
     display: flex;
     justify-content: start;
     padding: 0.5vw;
+    background-color: whitesmoke;
+    opacity: 0.5;
+    backdrop-filter: blur(5vw);
+    border-radius: 20vw;
+    color: whitesmoke;
 }
 
 /* ----------------------------------------------------------------------------------------------------------------------------------*/
