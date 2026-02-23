@@ -3,7 +3,7 @@ title: Lock-In
 category: videomaking
 image: img/lock-in.png
 date: 2025-08-29 +0200
-tags: Krátky‎film
+tags: Film
 used: DaVinci
 ---
 Prvý krátky film, ktorý som spravil. Jednoduchý príbeh, ktorý zdanlivo hovorí iba o uprataní izby.
