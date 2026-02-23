@@ -18,22 +18,35 @@ title: Programovanie
                 <div class="text-image">
                     <div class="text">
                         <h2 class="nd">{{ project.title }}</h2>
-                        {% if project.tags.size > 0 %}
-                            <div class="tag-container">
-                                {% for tag in project.tags %}
-                                    <span class="tag-pill">{{ tag }}</span>
-                                {% endfor %}
-                            </div>
-                        {% endif %}
-
                         {{ project.content }}
-                        <time class="project-date" datetime="{{ project.date | date: '%Y-%m-%d' }}">
-                            {{ project.date | date: "%d. %m. %Y" }}
-                        </time>
+
+                        <div class="project-meta">
+                            <time class="project-date">
+                                {{ project.date | date: "%B %Y" }}
+                            </time>
+
+                            <div class="tag-container">
+                                {% if project.used %}
+                                    {% assign used_list = project.used | join: ',' | split: ',' %}
+                                    {% for tool in used_list %}
+                                        <span class="tag-pill tag-used">{{ tool | strip }}</span>
+                                    {% endfor %}
+                                {% endif %}
+
+                                {% if project.tags %}
+                                    {% assign tag_list = project.tags | join: ',' | split: ',' %}
+                                    {% for tag in tag_list %}
+                                        <span class="tag-pill">{{ tag | strip }}</span>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                        </div>
                     </div>
                     <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
                 </div>
             {% endfor %}
+        {% else %}
+            <p>Momentálne nie sú k dispozícii žiadne projekty s kategóriou "coding".</p>
         {% endif %}
     </div>
 </body>
