@@ -76,6 +76,7 @@ h2 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: clamp(3rem, 3vw, 4rem);
     margin-bottom: 1vw;
+    margin-top: 0;
 }
 h2:not(.nd) {
     margin-left: 10%;
@@ -687,6 +688,7 @@ video {
     }
 
 }
+
 
 
 
