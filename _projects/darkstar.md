@@ -4,6 +4,7 @@ category: design
 image: img/design/darkstar.png
 date: 2026-01-23 +0200
 tags: plagát
+used: Photoshop
 ---
 Tretí plagát v sérii plagátov ktoré robím v rámci programu DofE.
 V tomto dizajne som sa snažil nepoužívať tradičný layout, takže je to viac organické.
