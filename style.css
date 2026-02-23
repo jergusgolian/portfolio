@@ -48,7 +48,7 @@ body {
     max-width: 45cm;
     margin: auto;
 }
-p {
+p, time {
     color: rgb(20, 20, 20);
     font-family: Arial, Helvetica, sans-serif;
     width: 90%;
@@ -75,7 +75,7 @@ h2 {
     text-align: left;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: clamp(3rem, 3vw, 4rem);
-    margin-bottom: 0.5vw;
+    margin-bottom: 1vw;
 }
 h2:not(.nd) {
     margin-left: 10%;
@@ -314,6 +314,7 @@ video {
     font-size: clamp(0.8rem, 1vw, 1.2rem);
     color: #D3D3D3;
     font-weight: 600;
+    margin-top: 1vw;
 }
 
 .tag-container {
@@ -325,14 +326,14 @@ video {
 
 .tag-pill {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: whitesmoke;
-    color: #151515;
-    padding: 0.2vw 1vw;
+    background: var(--main-color);
+    color: whitesmoke;
+    padding: 0.5vw 1vw;
     border-radius: 20vw;
     font-size: clamp(0.7rem, 0.9vw, 1rem);
     font-weight: bold;
     transition: 0.3s;
-    margin-bottom: 1vw;
+    margin-bottom: 1.5vw;
 }
 
 /* ----------------------------------------------------------------------------------------------------------------------------------*/
