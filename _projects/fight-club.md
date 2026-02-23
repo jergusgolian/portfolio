@@ -1,7 +1,7 @@
 ---
 title: Fight Club
 category: design
-image: img/design/fight-club.png
+image: img/design/fight-club.webp
 date: 2026-01-17 +0200
 tags: Plagát
 used: Photoshop

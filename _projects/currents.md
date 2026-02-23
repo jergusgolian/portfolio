@@ -1,7 +1,7 @@
 ---
 title: Currents - Tame Impala
 category: design
-image: img/design/tame-impala.png
+image: img/design/tame-impala.webp
 date: 2026-01-06 +0200
 tags: Plagát
 used: Photoshop
