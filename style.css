@@ -322,14 +322,13 @@ video {
 }
 
 .tag-pill {
-    font-family: Arial, sans-serif;
-    background-color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--main-color);
     color: #333;
-    padding: 6px 15px;
-    border-radius: 50px;
+    padding: 0.2vw;
+    border-radius: 20vw;
     font-size: clamp(0.7rem, 0.9vw, 1rem);
     font-weight: bold;
-    text-transform: uppercase;
     transition: 0.3s;
 }
 
@@ -623,7 +622,7 @@ video {
     .circle, .small-circle {
         display: none;
     }
-    .text-image:not(.info) {
+    .text-image {
         background-color: #D3D3D3;
         padding: 5vw;
         border-radius: 10vw;
