@@ -327,7 +327,6 @@ video {
 
 .tag-pill {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: var(--main-color);
     color: whitesmoke;
     padding: 0.5vw 1vw;
     border-radius: 20vw;
@@ -336,8 +335,11 @@ video {
     transition: 0.3s;
     margin-bottom: 1.5vw;
 }
+.tag-pill:not(.tag-used) {
+    background-color: var(--main-color);
+}
 .tag-used {
-    background: var(--secondary-color);
+    background-color: var(--secondary-color);
 }
 
 /* ----------------------------------------------------------------------------------------------------------------------------------*/
@@ -691,6 +693,7 @@ video {
     }
 
 }
+
 
 
 
