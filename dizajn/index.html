@@ -27,8 +27,8 @@ title: Dizajn
                         {% endif %}
 
                         {{ project.content }}
-                        <time class="project-date" datetime="{{ project.date | date: '%Y-%M-%D' }}">
-                            {{ project.date | date: "%D. %M. %Y" }}
+                        <time class="project-date" datetime="{{ project.date | date: '%Y-%m-%d' }}">
+                            {{ project.date | date: "%d. %m. %Y" }}
                         </time>
                     </div>
                     <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">

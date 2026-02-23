@@ -75,6 +75,7 @@ h2 {
     text-align: left;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: clamp(3rem, 3vw, 4rem);
+    margin-bottom: 0.5vw;
 }
 h2:not(.nd) {
     margin-left: 10%;
@@ -323,13 +324,17 @@ video {
 
 .tag-pill {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: var(--main-color);
-    color: #333;
-    padding: 0.2vw;
+    background: whitesmoke;
+    color: #151515;
+    padding: 0.2vw 1vw;
     border-radius: 20vw;
     font-size: clamp(0.7rem, 0.9vw, 1rem);
     font-weight: bold;
     transition: 0.3s;
+    margin-bottom: 1vw;
+}
+.tag-pill:hover {
+    background: var(--main-color);
 }
 
 /* ----------------------------------------------------------------------------------------------------------------------------------*/
