@@ -1,7 +1,7 @@
 ---
 title: SR-72 - Darkstar
 category: design
-image: img/design/darkstar.png
+image: img/design/darkstar.webp
 date: 2026-01-23 +0200
 tags: plagát
 used: Photoshop
