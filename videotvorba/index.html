@@ -37,9 +37,9 @@ title: Videotvorba
                         {% endif %}
 
                         {{ project.content }}
-                        <time class="project-date" datetime="{{ project.date | date: '%Y-%m-%d' }}">
+                        <p class=".date"><time class="project-date" datetime="{{ project.date | date: '%Y-%m-%d' }}">
                             {{ project.date | date: "%d. %m. %Y" }}
-                        </time>
+                        </time></p>
                     </div>
                     <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
                 </div>
