@@ -189,7 +189,6 @@ hr {
     padding: 1vw 2vw;
     font-size: clamp(0.75rem, 2vw, 1.75rem);
     display: block;
-    margin: auto;
     text-decoration: none;
     font-size: 1vw;
     transition: 0.3s;
