@@ -341,7 +341,6 @@ video {
 .tag-used {
     background-color: var(--secondary-color);
 }
-
 .search-bar {
     width: min(15vw, 300px);
     display: flex;
@@ -355,6 +354,10 @@ video {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: min(1.2vw, 22px);
     font-weight: 500;
+}
+.project-title {
+    display: flex;
+    flex-direction: row;
 }
 
 /* ----------------------------------------------------------------------------------------------------------------------------------*/
