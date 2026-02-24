@@ -1,7 +1,7 @@
 ---
 title: Lock-In
 category: videomaking
-image: img/lock-in.png
+image: img/videomaking/lock-in.mp4
 date: 2025-08-29 +0200
 tags: Film
 used: DaVinci
