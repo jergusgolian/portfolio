@@ -17,7 +17,10 @@ title: Programovanie
             {% for project in real_projects %}
                 <div class="text-image">
                     <div class="text">
-                        <h2 class="nd">{{ project.title }}</h2>
+                        <div class="project-title">
+                            <h2 class="nd">{{ project.title }}</h2>
+                            <time class="project-date" datetime="{{ project.date | date: '%Y-%m-%d' }}">{{ project.date | date: "%d. %m. %Y" }}</time>
+                        </div>
                         {% if project.tags.size > 0 %}
                             <div class="tag-container">
                                 {% if project.used %}
@@ -37,9 +40,6 @@ title: Programovanie
                         {% endif %}
 
                         {{ project.content }}
-                        <time class="project-date" datetime="{{ project.date | date: '%Y-%m-%d' }}">
-                            {{ project.date | date: "%d. %m. %Y" }}
-                        </time>
                     </div>
                     <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
                 </div>

@@ -71,58 +71,121 @@
             <div style="height: 120px;"></div>
             <h2>Dizajn</h2>
             {% assign real_projects = site.projects | where: "category", "design" | sort: "date" | reverse %}
-            {% assign latest_project = real_projects.first %}
+            {% assign project = real_projects.first %}
             
-            {% if latest_project %}
+            {% if project %}
                 <div class="text-image">
                     <div class="text">
-                        <h2 class="nd">{{ latest_project.title }}</h2>
-                        {{ latest_project.content }}
+                        <div class="project-title">
+                            <h2 class="nd">{{ project.title }}</h2>
+                            <time class="project-date" datetime="{{ project.date | date: '%Y-%m-%d' }}">{{ project.date | date: "%d. %m. %Y" }}</time>
+                        </div>
+                        {% if project.tags.size > 0 %}
+                            <div class="tag-container">
+                                {% if project.used %}
+                                    {% assign used_list = project.used | join: ',' | split: ',' %}
+                                    {% for tool in used_list %}
+                                        <span class="tag-pill tag-used">{{ tool | strip }}</span>
+                                    {% endfor %}
+                                {% endif %}
+
+                                {% if project.tags %}
+                                    {% assign tag_list = project.tags | join: ',' | split: ',' %}
+                                    {% for tag in tag_list %}
+                                        <span class="tag-pill">{{ tag | strip }}</span>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                        {% endif %}
+
+                        {{ project.content }}
+                        <a href="/portfolio/dizajn" class="web-button">Ďalšie</a>
                     </div>
-                    <img src="{{ latest_project.image | relative_url }}" alt="{{ latest_project.title }}">
+                    <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
                 </div>
             {% else %}
                 <p>Momentálne nie sú k dispozícii žiadne projekty s kategóriou "design".</p>
             {% endif %}
-            <a href="/portfolio/dizajn" class="web-button">Ďalšie</a>
         </div>
         <div id="videotvorba">
             <div style="height: 120px;"></div>
             <h2>Videotvorba</h2>
             {% assign real_projects = site.projects | where: "category", "videomaking" | sort: "date" | reverse %}
-            {% assign latest_project = real_projects.first %}
+            {% assign project = real_projects.first %}
             
-            {% if latest_project %}
+            {% if project %}
                 <div class="text-image">
                     <div class="text">
-                        <h2 class="nd">{{ latest_project.title }}</h2>
-                        {{ latest_project.content }}
+                        <div class="project-title">
+                            <h2 class="nd">{{ project.title }}</h2>
+                            <time class="project-date" datetime="{{ project.date | date: '%Y-%m-%d' }}">{{ project.date | date: "%d. %m. %Y" }}</time>
+                        </div>
+                        {% if project.tags.size > 0 %}
+                            <div class="tag-container">
+                                {% if project.used %}
+                                    {% assign used_list = project.used | join: ',' | split: ',' %}
+                                    {% for tool in used_list %}
+                                        <span class="tag-pill tag-used">{{ tool | strip }}</span>
+                                    {% endfor %}
+                                {% endif %}
+
+                                {% if project.tags %}
+                                    {% assign tag_list = project.tags | join: ',' | split: ',' %}
+                                    {% for tag in tag_list %}
+                                        <span class="tag-pill">{{ tag | strip }}</span>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                        {% endif %}
+
+                        {{ project.content }}
+                        <a href="/portfolio/videotvorba" class="web-button">Ďalšie</a>
                     </div>
-                    <img src="{{ latest_project.image | relative_url }}" alt="{{ latest_project.title }}">
+                    <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
                 </div>
             {% else %}
                 <p>Momentálne nie sú k dispozícii žiadne projekty s kategóriou "videotvorba".</p>
             {% endif %}
-            <a href="/portfolio/videotvorba" class="web-button">Ďalšie</a>
         </div>
         <div id="programovanie">
             <div style="height: 120px;"></div>
             <h2>Programovanie</h2>
             {% assign real_projects = site.projects | where: "category", "coding" | sort: "date" | reverse %}
-            {% assign latest_project = real_projects.first %}
+            {% assign project = real_projects.first %}
             
-            {% if latest_project %}
+            {% if project %}
                 <div class="text-image">
                     <div class="text">
-                        <h2 class="nd">{{ latest_project.title }}</h2>
-                        {{ latest_project.content }}
+                        <div class="project-title">
+                            <h2 class="nd">{{ project.title }}</h2>
+                            <time class="project-date" datetime="{{ project.date | date: '%Y-%m-%d' }}">{{ project.date | date: "%d. %m. %Y" }}</time>
+                        </div>
+                        {% if project.tags.size > 0 %}
+                            <div class="tag-container">
+                                {% if project.used %}
+                                    {% assign used_list = project.used | join: ',' | split: ',' %}
+                                    {% for tool in used_list %}
+                                        <span class="tag-pill tag-used">{{ tool | strip }}</span>
+                                    {% endfor %}
+                                {% endif %}
+
+                                {% if project.tags %}
+                                    {% assign tag_list = project.tags | join: ',' | split: ',' %}
+                                    {% for tag in tag_list %}
+                                        <span class="tag-pill">{{ tag | strip }}</span>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                        {% endif %}
+
+                        {{ project.content }}
+                        <a href="/portfolio/programovanie" class="web-button">Ďalšie</a>
                     </div>
-                    <img src="{{ latest_project.image | relative_url }}" alt="{{ latest_project.title }}">
+                    <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
                 </div>
             {% else %}
                 <p>Momentálne nie sú k dispozícii žiadne projekty s kategóriou "coding".</p>
             {% endif %}
-            <a href="/portfolio/programovanie" class="web-button">Ďalšie</a>
         </div>
         <div class="foot"></div>
     </div>
