@@ -71,9 +71,9 @@
             <div style="height: 120px;"></div>
             <h2>Dizajn</h2>
             {% assign real_projects = site.projects | where: "category", "design" | sort: "date" | reverse %}
-            {% assign latest_project = real_projects.first %}
+            {% assign project = real_projects.first %}
             
-            {% if latest_project %}
+            {% if project %}
                 <div class="text-image">
                     <div class="text">
                         <h2 class="nd">{{ project.title }}</h2>
@@ -111,9 +111,9 @@
             <div style="height: 120px;"></div>
             <h2>Videotvorba</h2>
             {% assign real_projects = site.projects | where: "category", "videomaking" | sort: "date" | reverse %}
-            {% assign latest_project = real_projects.first %}
+            {% assign project = real_projects.first %}
             
-            {% if latest_project %}
+            {% if project %}
                 <div class="text-image">
                     <div class="text">
                         <h2 class="nd">{{ project.title }}</h2>
@@ -151,9 +151,9 @@
             <div style="height: 120px;"></div>
             <h2>Programovanie</h2>
             {% assign real_projects = site.projects | where: "category", "coding" | sort: "date" | reverse %}
-            {% assign latest_project = real_projects.first %}
+            {% assign project = real_projects.first %}
             
-            {% if latest_project %}
+            {% if project %}
                 <div class="text-image">
                     <div class="text">
                         <h2 class="nd">{{ project.title }}</h2>
