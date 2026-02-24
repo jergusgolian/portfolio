@@ -77,6 +77,7 @@ h2 {
     font-size: clamp(3rem, 3vw, 4rem);
     margin-bottom: 1vw;
     margin-top: 0;
+    margin: 0 min(1vw, 20px) min(-0.5vw, 10px) 0;
 }
 h2:not(.nd) {
     margin-left: 10%;
@@ -314,7 +315,6 @@ video {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #D3D3D3;
     font-weight: 400;
-    margin-top: 10vw;
     letter-spacing: min(0.1vw, 4px);
 }
 
@@ -358,6 +358,8 @@ video {
 .project-title {
     display: flex;
     flex-direction: row;
+    align-items: end;
+    margin-bottom: min(1vw, 20px);
 }
 
 /* ----------------------------------------------------------------------------------------------------------------------------------*/
