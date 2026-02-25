@@ -312,7 +312,7 @@ video {
 }
 .project-date {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #D3D3D3;
+    color: #3d3d3d;
     font-weight: 400;
     letter-spacing: min(0.1vw, 4px);
 }
@@ -537,6 +537,9 @@ ul div p {
         pointer-events: none;
         z-index: 2;
     }
+    .project-date {
+        color: #d3d3d3;
+    }
     .small-circle {
         --circle-size: 0.75vw;
         position: fixed;
@@ -732,6 +735,7 @@ ul div p {
     }
 
 }
+
 
 
 
