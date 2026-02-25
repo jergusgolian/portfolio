@@ -368,7 +368,7 @@ ul div p {
     display: flex;
     flex-direction: row;
     color: black;
-    gap: min(0.4vw, 8px);
+    gap: min(1vw, 20px);
 }
 .filter i {
     margin-top: min(0.1vw, 2px);
@@ -564,7 +564,7 @@ ul div p {
         filter: invert();
     }
     .filter {
-        color: whitesmoke;
+        color: #d3d3d3;
     }
 }
 
@@ -727,6 +727,7 @@ ul div p {
     }
 
 }
+
 
 
 
