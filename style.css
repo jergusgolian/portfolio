@@ -159,7 +159,7 @@ img:hover:not(.nd) {
     animation-iteration-count: 1; /* Number of times to repeat (1 for a single run) */
     animation-fill-mode: forwards; /* Ensures the element stays visible after the animation */
 }
-.main .text-image:nth-of-type(even), .main div:nth-of-type(even) .text-image {
+.main .text-image:nth-of-type(even) {
     flex-direction: row-reverse;
 }
 .main .text-image:nth-of-type(even) .text {
@@ -466,7 +466,6 @@ ul div p {
         padding: 1vw 2vw;
         font-size: clamp(0.75rem, 2vw, 1.75rem);
         display: block;
-        margin: auto;
         text-decoration: none;
         font-size: 1vw;
         transition: 0.3s;
@@ -717,6 +716,7 @@ ul div p {
     }
 
 }
+
 
 
 
