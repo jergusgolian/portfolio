@@ -159,7 +159,7 @@ img:hover:not(.nd) {
     animation-iteration-count: 1; /* Number of times to repeat (1 for a single run) */
     animation-fill-mode: forwards; /* Ensures the element stays visible after the animation */
 }
-.main .text-image:nth-of-type(even) {
+.main .text-image:nth-of-type(even), .main div .text-image:nth-of-type(even) {
     flex-direction: row-reverse;
 }
 .main .text-image:nth-of-type(even) .text {
@@ -717,6 +717,7 @@ ul div p {
     }
 
 }
+
 
 
 
