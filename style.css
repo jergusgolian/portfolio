@@ -359,6 +359,12 @@ video {
     align-items: end;
     margin-bottom: min(1vw, 20px);
 }
+ul div p {
+    margin: 0
+}
+.fiter-options {
+    gap: min(3vw, 60px);
+}
 
 /* ----------------------------------------------------------------------------------------------------------------------------------*/
 /* DARK THEME  ----------------------------------------------------------------------------------------------------------------------*/
@@ -582,8 +588,8 @@ video {
         justify-content: space-between;
         width: 50px;
         height: 100px;
-        background: none;
-        border: none;
+        background: white;
+        border: white;
         cursor: pointer;
         padding: 0;
         position: absolute;
@@ -711,6 +717,7 @@ video {
     }
 
 }
+
 
 
 
