@@ -564,7 +564,10 @@ ul div p {
         filter: invert();
     }
     .filter {
-        color: #d3d3d3;
+        color: whitesmoke;
+    }
+    .filter p {
+        color: whitesmoke;
     }
 }
 
@@ -727,6 +730,7 @@ ul div p {
     }
 
 }
+
 
 
 
