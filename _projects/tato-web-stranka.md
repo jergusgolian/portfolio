@@ -1,7 +1,7 @@
 ---
 title: Táto web-stránka
 category: coding
-image: img/my-setup.png
+image: img/coding/my-setup.png
 date: 2025-11-29 +0200
 tags: Web-stránka
 used: HTML, CSS, JavaScript, Jekyll
