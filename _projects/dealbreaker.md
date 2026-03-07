@@ -1,7 +1,7 @@
 ---
 title: Dealbreaker
 category: coding
-image: img/dealbreaker.png
+image: img/coding/dealbreaker.png
 date: 2025-12-21 +0200
 tags: Videohra
 used: Python
