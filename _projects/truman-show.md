@@ -1,7 +1,7 @@
 ---
 title: Truman Show
 category: design
-image: img/truman-show.webp
+image: img/img/truman-show.webp
 date: 2026-03-07 +0200
 tags: Plagát
 used: Photoshop
