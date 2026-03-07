@@ -1,5 +1,5 @@
 ---
-title: Dealbreaker
+title: NSC
 category: coding
 image: img/coding/numeral-system-converter.png
 date: 2026-03-07 +0200
