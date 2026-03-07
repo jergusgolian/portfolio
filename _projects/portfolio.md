@@ -1,5 +1,5 @@
 ---
-title: Táto web-stránka
+title: Portfolio
 category: coding
 image: img/coding/my-setup.png
 date: 2025-11-29 +0200
