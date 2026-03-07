@@ -160,14 +160,14 @@ img:hover:not(.nd) {
     animation-iteration-count: 1; /* Number of times to repeat (1 for a single run) */
     animation-fill-mode: forwards; /* Ensures the element stays visible after the animation */
 }
-.main .text-image:nth-of-type(even) {
+.main .text-image:nth-of-type(even), .row-reverse {
     flex-direction: row-reverse;
 }
-.main .text-image:nth-of-type(even) .text {
+.main .text-image:nth-of-type(even) .text, .row-reverse .text {
     margin-left: 5%;
     margin-right: 0;
 }
-.main .text-image:nth-of-type(odd) .text {
+.main .text-image:nth-of-type(odd) .text, .text-image:not(.row-reverse) .text {
     margin-right: 5%;
     margin-left: 0;
 }
