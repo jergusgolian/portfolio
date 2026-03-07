@@ -2,7 +2,7 @@
 title: Truman Show
 category: design
 image: img/truman-show.png
-date: 2025-03-07 +0200
+date: 2026-03-07 +0200
 tags: Plagát
 used: Photoshop
 ---
